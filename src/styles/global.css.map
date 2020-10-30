@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY",
+    "sources": [
+        "global.scss",
+        "settings.scss"
+    ],
+    "names": [],
+    "file": "global.css"
+}

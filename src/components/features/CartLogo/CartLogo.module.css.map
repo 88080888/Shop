@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CAMpB;;AARD,AAIE,KAJG,CAIH,eAAe,CAAC;EACd,KAAK,ECJG,KAAK;EDKb,YAAY,EAAE,IAAI;CACnB",
+    "sources": [
+        "CartLogo.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "CartLogo.module.css"
+}

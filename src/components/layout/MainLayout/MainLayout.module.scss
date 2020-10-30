@@ -1,4 +1,12 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  .header {
+    background: $color-two;
+  }
+  .footer {
+    top: auto;
+    bottom: 0;
+    background: $color-one;
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AACE,KADG,CACH,KAAK,CAAC;EACJ,WAAW,EAAE,IAAI;CAClB;;AAHH,AAIE,KAJG,CAIH,MAAM,CAAC;EACL,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,QAAQ;CACjB;;AAPH,AAQE,KARG,CAQH,SAAS,CAAC;EACR,aAAa,EAAE,CAAC;CACjB",
+    "sources": [
+        "ShopLogo.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "ShopLogo.module.css"
+}

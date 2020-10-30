@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY",
+    "sources": [
+        "Product.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "Product.module.css"
+}

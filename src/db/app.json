@@ -1,0 +1,44 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "name":"open-bra",
+      "type":"bra",
+      "price": "$60",
+      "image": "images/products/01.jpg",
+      "description":"opis opis opis"
+    },
+    {
+      "id": "2",
+      "name":"open-bra",
+      "type":"bra",
+      "price": "$60",
+      "image":"<img src=\"images/products/02.jpg\">",
+      "description":"opis opis opis"
+    },
+    {
+      "id": "3",
+      "name":"open-bra",
+      "type":"bra",
+      "price": "$60",
+      "image":"<img src=\"images/products/03.jpg\">",
+      "description":"opis opis opis"
+    },
+    {
+      "id": "4",
+      "name":"open-bra",
+      "type":"bra",
+      "price": "$60",
+      "image":"<img src=\"images/products/04.jpg\">",
+      "description":"opis opis opis"
+    },
+    {
+      "id": "5",
+      "name":"open-pants",
+      "type":"pants",
+      "price": "$30",
+      "image":"<img src=\"images/products/05.jpg\">",
+      "description":"opis opis opis pants"
+    }
+  ]
+}      

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY",
+    "sources": [
+        "NotFound.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "NotFound.module.css"
+}

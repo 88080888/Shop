@@ -1,0 +1,18 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px auto;
+  align-items: center;
+}
+
+.icon {
+  color: $color-two;
+  font-size: 40px;
+  margin: 0 40px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}

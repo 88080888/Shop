@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AACE,KADG,CACH,OAAO,CAAC;EACN,UAAU,ECAF,KAAK;CDCd;;AAHH,AAIE,KAJG,CAIH,OAAO,CAAC;EACN,GAAG,EAAE,IAAI;EACT,MAAM,EAAE,CAAC;EACT,UAAU,ECNF,KAAK;CDOd",
+    "sources": [
+        "MainLayout.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "MainLayout.module.css"
+}

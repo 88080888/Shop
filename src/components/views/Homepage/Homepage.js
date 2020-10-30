@@ -1,5 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ProductList } from '../../features/ProductList/ProductList';
+import { connect } from 'react-redux';
+import { getAllProducts } from '../../../redux/productsRedux';
+
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 import clsx from 'clsx';
 
@@ -8,17 +14,27 @@ import clsx from 'clsx';
 
 import styles from './Homepage.module.scss';
 
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <h2>Homepage</h2>
-    {children}
-  </div>
-);
+class Component extends React.Component {
 
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
+  static propTypes = {
+    products: PropTypes.array,
+  }  
+  
+  render() {
+    const { products } = this.props;
+
+    return(
+      <Paper>
+        <Grid container  className={styles.gridContainer} justify='center'>
+          <Grid item>
+            <ProductList products={products}/>
+          </Grid>
+        </Grid>
+      </Paper>
+    );
+  }
+}
+
 
 // const mapStateToProps = state => ({
 //   someProp: reduxSelector(state),

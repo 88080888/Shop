@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY",
+    "sources": [
+        "OrderSummary.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "OrderSummary.module.css"
+}

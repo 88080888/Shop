@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,IAAI;EACX,eAAe,EAAE,aAAa;EAC9B,MAAM,EAAE,SAAS;CAClB",
+    "sources": [
+        "Header.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "Header.module.css"
+}

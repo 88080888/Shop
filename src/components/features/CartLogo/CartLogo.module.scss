@@ -1,0 +1,11 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+
+  .productCounter {
+    color: $color-one;
+    margin-right: 80px;
+  }
+}

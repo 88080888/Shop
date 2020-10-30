@@ -9,9 +9,9 @@ import { store } from './redux/store';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
-import { Post } from './components/views/Post/Post';
-import { PostEdit } from './components/views/PostEdit/PostEdit';
-import { PostAdd } from './components/views/PostAdd/PostAdd';
+import { Product } from './components/views/Product/Product';
+import { OrderSummary } from './components/views/OrderSummary/OrderSummary';
+import { Cart } from './components/views/Cart/Cart';
 import { NotFound } from './components/views/NotFound/NotFound';
 
 const theme = createMuiTheme({
@@ -29,9 +29,9 @@ const App = () => (
           <MainLayout>
             <Switch>
               <Route exact path='/' component={Homepage} />
-              <Route exact path='/post/add' component={PostAdd} />
-              <Route exact path='/post/:id' component={Post} />
-              <Route exact path='/post/:id/edit' component={PostEdit} />
+              <Route exact path='/cart' component={Cart} />
+              <Route exact path='/product' component={Product} />
+              <Route exact path='/cart/ordersummary' component={OrderSummary} />
               <Route path='*' component={NotFound} />
             </Switch>
           </MainLayout>

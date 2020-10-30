@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY",
+    "sources": [
+        "Cart.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "Cart.module.css"
+}

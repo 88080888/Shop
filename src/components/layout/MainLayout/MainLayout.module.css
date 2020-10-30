@@ -1,0 +1,11 @@
+/* COLORS */
+.root .header {
+  background: white;
+}
+
+.root .footer {
+  top: auto;
+  bottom: 0;
+  background: black;
+}
+/*# sourceMappingURL=MainLayout.module.css.map */
