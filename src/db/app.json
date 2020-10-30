@@ -5,7 +5,7 @@
       "name":"open-bra",
       "type":"bra",
       "price": "$60",
-      "image": "images/products/01.jpg",
+      "photo": "images/products/01.jpg",
       "description":"opis opis opis"
     },
     {
@@ -13,7 +13,7 @@
       "name":"open-bra",
       "type":"bra",
       "price": "$60",
-      "image":"<img src=\"images/products/02.jpg\">",
+      "photo":"<img src=\"photos/products/02.jpg\">",
       "description":"opis opis opis"
     },
     {
@@ -21,7 +21,7 @@
       "name":"open-bra",
       "type":"bra",
       "price": "$60",
-      "image":"<img src=\"images/products/03.jpg\">",
+      "photo":"<img src=\"images/products/03.jpg\">",
       "description":"opis opis opis"
     },
     {
@@ -29,7 +29,7 @@
       "name":"open-bra",
       "type":"bra",
       "price": "$60",
-      "image":"<img src=\"images/products/04.jpg\">",
+      "photo":"<img src=\"images/products/04.jpg\">",
       "description":"opis opis opis"
     },
     {
@@ -37,7 +37,7 @@
       "name":"open-pants",
       "type":"pants",
       "price": "$30",
-      "image":"<img src=\"images/products/05.jpg\">",
+      "photo":"<img src=\"images/products/05.jpg\">",
       "description":"opis opis opis pants"
     }
   ]

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AACE,KADG,CACH,MAAM,CAAC;EACL,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "ProductBox.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "ProductBox.module.css"
+}

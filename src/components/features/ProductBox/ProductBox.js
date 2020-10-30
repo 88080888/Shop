@@ -1,7 +1,7 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-//import 03 from '../../../images/products/03.jpg';
+
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,14 +12,13 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 
-import clsx from 'clsx';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 import styles from './ProductBox.module.scss';
 
-const Component = ({}) => (
+const Component = ({ id, name, type, price, photo }) => (
   <Card className={styles.root}>
     <CardActionArea
       //className={styles.cardClickableArea}
@@ -27,18 +26,19 @@ const Component = ({}) => (
     >
       <CardMedia
         component='img'
-        image='../../../images/products/03.jpg'
+        alt={type}
+        image={photo}
         className={styles.photo}
       />
 
       <CardContent>
         <Typography
           gutterBottom
-          variant='h5'
+          variant='subtitle2'
           component='h2'
           className={styles.cardTitle}
         >
-          panties
+          {name}
         </Typography>
 
         <Typography
@@ -46,7 +46,7 @@ const Component = ({}) => (
           component='p'
           className={styles.cardBody}
         >
-          Prices start from 50$!
+          Prices start from {price}!
         </Typography>
       </CardContent>
     </CardActionArea>
@@ -56,8 +56,8 @@ const Component = ({}) => (
         variant='contained'
         size='large'
         color='primary'
-        //component={NavLink}
-        exact to={`/product/1`}
+        component={NavLink}
+        exact to={`/product/${id}`}
         className={styles.button}
       >
         Show
@@ -68,6 +68,11 @@ const Component = ({}) => (
 );
 
 Component.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  price: PropTypes.string,
+  photo: PropTypes.node,
 };
 
 // const mapStateToProps = state => ({
