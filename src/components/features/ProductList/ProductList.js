@@ -11,8 +11,13 @@ import styles from './ProductList.module.scss';
 
 
 const Component = ({ products }) => (
-  <Grid container
+  <Grid 
+    container
     className={styles.root}
+    direction='row'
+    justify='space-between'
+    alignItems='center'
+    spacing='3'
   >
     {products.map(product => (
       <Grid key={product.id} item>
