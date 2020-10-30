@@ -36,18 +36,18 @@ class Component extends React.Component {
 }
 
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+const mapStateToProps = state => ({
+  products: getAllProducts(state),
+});
 
 // const mapDispatchToProps = dispatch => ({
 //   someAction: arg => dispatch(reduxActionCreator(arg)),
 // });
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps)(Component);
 
 export {
-  Component as Homepage,
-  // Container as Homepage,
+  //Component as Homepage,
+  Container as Homepage,
   Component as HomepageComponent,
 };
