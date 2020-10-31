@@ -1,0 +1,7 @@
+/* COLORS */
+.root input[type=number]::-webkit-inner-spin-button,
+.root input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*# sourceMappingURL=ProductCount.module.css.map */

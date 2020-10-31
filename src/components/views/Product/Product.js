@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { ProductCount } from '../../features/ProductCount/ProductCount';
 import { PhotoGallery } from '../../features/PhotoGallery/PhotoGallery';
+import { formInputNumberParser } from '../../../utils';
 
 import styles from './Product.module.scss';
 
@@ -16,13 +17,66 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 class Component extends React.Component {
+
+  state = {
+    orderData: {
+      finalPrice: 0,
+      quantity: 0,
+    },
+  }
+
   static propTypes = {
     product: PropTypes.object,
   }
 
+  handleChange = (event) => {
+    const { orderData } = this.state;
+    const { value, id } = event.target;
+
+    const parsedValue = formInputNumberParser(value);
+
+    this.setState({
+      orderData: {
+        ...orderData,
+        [id]: parsedValue,
+      },
+    });
+  }
+
+  decreaseProductQuantity = () => {
+    const { orderData } = this.state;
+
+    if (orderData.quantity === 0) {
+      return;
+    }
+
+    this.setState({
+      orderData: {
+        ...orderData,
+        quantity: orderData.quantity - 1,
+      },
+    });
+  }
+
+  increaseProductQuantity = () => {
+    const { orderData } = this.state;
+
+    if (orderData.quantity === 999) {
+      return;
+    }
+
+    this.setState({
+      orderData: {
+        ...orderData,
+        quantity: orderData.quantity + 1,
+      },
+    });
+  }
+
   render() {
     const {product} = this.props;
-    console.log(product);
+    const { orderData } = this.state;
+
     return(
       <Paper>
         <Card>
@@ -34,7 +88,7 @@ class Component extends React.Component {
               {product.description}
             </Typography>
             <PhotoGallery images={product.photo} />
-            <ProductCount />
+            <ProductCount handleChange={this.handleChange} increase={this.increaseProductQuantity} decrease={this.decreaseProductQuantity} quantity={orderData.quantity} />
             <Typography>
               Price: {product.price}
             </Typography>

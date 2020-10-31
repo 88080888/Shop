@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AACE,KADG,CACH,KAAK,CAAA,AAAA,IAAC,CAAD,MAAC,AAAA,CAAY,2BAA2B;AAD/C,KAAK,CAEH,KAAK,CAAA,AAAA,IAAC,CAAD,MAAC,AAAA,CAAY,2BAA2B,CAAC;EAC9C,kBAAkB,EAAE,IAAI;EACxB,MAAM,EAAE,CAAC;CAEV",
+    "sources": [
+        "ProductCount.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "ProductCount.module.css"
+}
