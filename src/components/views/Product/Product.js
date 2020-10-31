@@ -32,43 +32,57 @@ class Component extends React.Component {
   handleChange = (event) => {
     const { orderData } = this.state;
     const { value, id } = event.target;
+    const { product } = this.props;
 
     const parsedValue = formInputNumberParser(value);
+    const totalPrice = parsedValue * product.price;
 
     this.setState({
       orderData: {
         ...orderData,
         [id]: parsedValue,
+        totalPrice: totalPrice,
       },
     });
   }
 
   decreaseProductQuantity = () => {
     const { orderData } = this.state;
+    const { product } = this.props;
 
     if (orderData.quantity === 0) {
       return;
     }
 
+    const newQuantity = orderData.quantity - 1;
+
+    const totalPrice = newQuantity * product.price;
+
     this.setState({
       orderData: {
         ...orderData,
-        quantity: orderData.quantity - 1,
+        quantity: newQuantity,
+        totalPrice: totalPrice,
       },
     });
   }
 
   increaseProductQuantity = () => {
     const { orderData } = this.state;
+    const { product } = this.props;
 
     if (orderData.quantity === 999) {
       return;
     }
 
+    const newQuantity = orderData.quantity + 1;
+    const totalPrice = newQuantity * product.price;
+
     this.setState({
       orderData: {
         ...orderData,
-        quantity: orderData.quantity + 1,
+        quantity: newQuantity,
+        totalPrice: totalPrice,
       },
     });
   }
@@ -90,7 +104,7 @@ class Component extends React.Component {
             <PhotoGallery images={product.photo} />
             <ProductCount handleChange={this.handleChange} increase={this.increaseProductQuantity} decrease={this.decreaseProductQuantity} quantity={orderData.quantity} />
             <Typography>
-              Price: {product.price}
+              Price: {orderData.totalPrice} $
             </Typography>
           </CardContent>
           <CardActions>

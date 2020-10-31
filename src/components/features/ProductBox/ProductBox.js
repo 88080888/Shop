@@ -72,7 +72,7 @@ Component.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   type: PropTypes.string,
-  price: PropTypes.string,
+  price: PropTypes.number,
   photo: PropTypes.node,
 };
 
