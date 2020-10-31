@@ -21,8 +21,9 @@ import styles from './ProductBox.module.scss';
 const Component = ({ id, name, type, price, photo }) => (
   <Card className={styles.root}>
     <CardActionArea
-      //className={styles.cardClickableArea}
-      //exact to={`/product/1`}
+      className={styles.cardClickableArea}
+      component={NavLink}
+      exact to={`product/${id}`}
     >
       <CardMedia
         component='img'
