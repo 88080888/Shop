@@ -5,11 +5,20 @@ import PropTypes from 'prop-types';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 import styles from './PhotoGallery.module.scss';
+import Carousel from 'react-bootstrap/Carousel';
 
 const Component = ({images}) => (
-  <div className={styles.root}>
-    <h2>PhotoGallery</h2>
-  </div>
+  <Carousel className={styles.root}>
+    {images.map(image => (
+      <Carousel.Item key={image}>
+        <img
+          className='d-block w-100'
+          src={image}
+          alt="slide"
+        />  
+      </Carousel.Item>
+    ))}
+  </Carousel>
 );
 
 Component.propTypes = {

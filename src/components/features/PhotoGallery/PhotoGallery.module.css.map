@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,KAAK,EAAC,GAAG;CACV",
+    "sources": [
+        "PhotoGallery.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "PhotoGallery.module.css"
+}
