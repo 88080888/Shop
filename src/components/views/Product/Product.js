@@ -101,7 +101,7 @@ class Component extends React.Component {
       cartProduct.name = product.name;
       cartProduct.quantity = orderData.quantity;
       cartProduct.price = orderData.totalPrice;
-      cartProduct.description = '';
+      cartProduct.comment = '';
 
       addCartProduct(cartProduct);
     }
