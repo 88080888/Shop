@@ -9,7 +9,7 @@ import { ProductCount } from '../../features/ProductCount/ProductCount';
 import { PhotoGallery } from '../../features/PhotoGallery/PhotoGallery';
 import { formInputNumberParser } from '../../../utils';
 
-import styles from './Product.module.scss';
+//import styles from './Product.module.scss';
 
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
