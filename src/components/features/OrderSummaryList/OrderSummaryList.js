@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './OrderSummary.module.scss';
+import styles from './OrderSummaryList.module.scss';
 
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -51,7 +51,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as OrderSummary,
-  // Container as OrderSummary,
-  Component as OrderSummaryComponent,
+  Component as OrderSummaryList,
+  // Container as OrderSummaryList,
+  Component as OrderSummaryListComponent,
 };

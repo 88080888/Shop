@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { OrderSummaryComponent } from './OrderSummaryList';
+import { OrderSummaryListComponent } from './OrderSummaryList';
 
 const cartProducts = [];
 
-describe('Component OrderSummary', () => {
+describe('Component OrderSummaryList', () => {
   it('should render without crashing', () => {
-    const component = shallow(<OrderSummaryComponent cartProducts={cartProducts}/>);
+    const component = shallow(<OrderSummaryListComponent cartProducts={cartProducts}/>);
     expect(component).toBeTruthy();
   });
 });
