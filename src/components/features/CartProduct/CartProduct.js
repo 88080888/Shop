@@ -29,7 +29,7 @@ class Component extends React.Component {
   removeFromCart = () => {
     const { id, removeCartProduct } = this.props;
 
-    console.log(id);
+    console.log('id:',id);
 
     removeCartProduct(id);
   }	  
