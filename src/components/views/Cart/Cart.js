@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { getAllCartProducts } from '../../../redux/cartRedux';
@@ -10,6 +11,7 @@ import styles from './Cart.module.scss';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 class Component extends React.Component {
   static propTypes = {
@@ -39,6 +41,16 @@ class Component extends React.Component {
         <Typography className={styles.title} gutterBottom variant="h4" component="h1">
           Total cost:{this.totalCost()}$
         </Typography>
+        <Button
+          variant='contained'
+          size='large'
+          color='primary'
+          className={styles.button}
+          component={NavLink}
+          exact to={`/order`}
+        >
+        ORDER SUMMARY
+        </Button>
       </Paper>
     );
   }

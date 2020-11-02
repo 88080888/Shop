@@ -32,7 +32,7 @@ const App = () => (
               <Route exact path='/' component={Homepage} />
               <Route exact path='/cart' component={Cart} />
               <Route exact path='/product/:id' component={Product} />
-              <Route exact path='/cart/ordersummary' component={OrderSummary} />
+              <Route exact path='/order' component={OrderSummary} />
               <Route path='*' component={NotFound} />
             </Switch>
           </MainLayout>
