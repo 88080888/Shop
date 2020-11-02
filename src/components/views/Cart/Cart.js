@@ -16,8 +16,19 @@ class Component extends React.Component {
     cartProducts: PropTypes.array,
   }
 
+  totalCost() {
+    const { cartProducts } = this.props;
+
+    let totalCost = 0;
+
+    cartProducts.map(cartProduct => totalCost += cartProduct.totalPrice);
+
+    return totalCost;
+  }
+
   render() {
     const { cartProducts } = this.props;
+
 
     return(
       <Paper>
@@ -25,6 +36,9 @@ class Component extends React.Component {
           Cart
         </Typography>
         <CartProductList cartProducts={cartProducts} />
+        <Typography className={styles.title} gutterBottom variant="h4" component="h1">
+          Total cost:{this.totalCost()}$
+        </Typography>
       </Paper>
     );
   }
