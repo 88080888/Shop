@@ -120,4 +120,11 @@ export const initialState = {
       error: false,
     },
   },
+  orders: {
+    data: [],
+    loading: {
+      active: false,
+      error: false,
+    },
+  },
 };
