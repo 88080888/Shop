@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import { ProductCount } from '../ProductCount/ProductCount';
 import { connect } from 'react-redux';
-import { removeCartProduct } from '../../../redux/cartRedux.js';
+import { removeCartProduct, updateCartProduct } from '../../../redux/cartRedux.js';
+import { formInputNumberParser } from '../../../utils';
 
 import styles from './CartProduct.module.scss';
 
@@ -16,6 +17,15 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 
 class Component extends React.Component {
+
+  state = {
+    cartProductData: {
+      titalPrice: this.props.totalPrice,
+      quantity: this.props.quantity,
+      comment: this.props.comment,
+    },
+  }
+
   static propTypes = {
     id: PropTypes.string,
     name: PropTypes.string,
@@ -24,18 +34,123 @@ class Component extends React.Component {
     price: PropTypes.number,
     comment: PropTypes.string,
     removeCartProduct: PropTypes.func,
+    totalPrice: PropTypes.number,
+    updateCartProduct: PropTypes.func,
   }
 
   removeFromCart = () => {
     const { id, removeCartProduct } = this.props;
-
-    console.log('id:',id);
-
     removeCartProduct(id);
-  }	  
+  }
+
+  handleQuantityChange = (event) => {
+    const { cartProductData } = this.state;
+    const { value, id } = event.target;
+    const { price, updateCartProduct } = this.props;
+
+    const parsedValue = formInputNumberParser(value);
+    const totalPrice = parsedValue * price;
+
+    this.setState({
+      cartProductData: {
+        ...cartProductData,
+        totalPrice: totalPrice,
+        [id]: parsedValue,
+      },
+    });
+
+    const cartProduct = {};
+
+    cartProduct.id = this.props.id;
+    cartProduct.key = id;
+    cartProduct.value = parsedValue;
+    cartProduct.totalPrice = totalPrice;
+
+    updateCartProduct(cartProduct);
+  }
+
+  handleCommentChange = (event) => {
+    const { cartProductData } = this.state;
+    const { value } = event.target;
+    const { updateCartProduct, id } = this.props;
+
+    this.setState({
+      cartProductData: {
+        ...cartProductData,
+        'comment': value,
+      },
+    });
+
+    const cartProduct = {};
+
+    cartProduct.id = id;
+    cartProduct.key = 'comment';
+    cartProduct.value = value;
+
+    updateCartProduct(cartProduct);
+  }
+
+  increaseCartProductQuantity = () => {
+    const { cartProductData } = this.state;
+    const { price, id, updateCartProduct } = this.props;
+
+    if(cartProductData.quantity === 999) {
+      return;
+    }
+
+    const newQuantity = cartProductData.quantity + 1;
+    const totalPrice = newQuantity * price;
+
+    this.setState({
+      cartProductData: {
+        ...cartProductData,
+        quantity: newQuantity,
+        totalPrice: totalPrice,
+      },
+    });
+
+    const cartProduct = {};
+
+    cartProduct.id = id;
+    cartProduct.key = 'quantity';
+    cartProduct.value = newQuantity;
+    cartProduct.totalPrice = totalPrice;
+
+    updateCartProduct(cartProduct);
+  }
+
+  decreaseCartProductQuantity = () => {
+    const { cartProductData } = this.state;
+    const { price, id, updateCartProduct } = this.props;
+
+    if(cartProductData.quantity === 1) {
+      return;
+    }
+
+    const newQuantity = cartProductData.quantity - 1;
+    const totalPrice = newQuantity * price;
+
+    this.setState({
+      cartProductData: {
+        ...cartProductData,
+        quantity: newQuantity,
+        totalPrice: totalPrice,
+      },
+    });
+
+    const cartProduct = {};
+
+    cartProduct.id = id;
+    cartProduct.key = 'quantity';
+    cartProduct.value = newQuantity;
+    cartProduct.totalPrice = totalPrice;
+
+    updateCartProduct(cartProduct);
+  }
 
   render() {
-    const { id, name, photo, quantity, price, comment } = this.props;
+    const { name, photo } = this.props;
+    const { cartProductData } = this.state;
 
     return(
       <Grid container className={styles.root} spacing={2}>
@@ -55,7 +170,7 @@ class Component extends React.Component {
               </Typography>
             </Grid>
             <Grid item xs>
-              <ProductCount />
+              <ProductCount handleChange={this.handleQuantityChange} quantity={cartProductData.quantity} increase={this.increaseCartProductQuantity} decrease={this.decreaseCartProductQuantity} />
             </Grid>
             <Grid item xs>
               <TextField
@@ -68,13 +183,15 @@ class Component extends React.Component {
                   maxLength: 100,
                 }}
                 className={styles.commentField}
+                value={cartProductData.comment}
+                onChange={this.handleCommentChange}
               />
             </Grid>
           </Grid>
 
           <Grid  item xs container direction='column' spacing={2}>
             <Grid className={styles.price} item>
-              ${price}
+              ${cartProductData.totalPrice}
             </Grid>
             <Grid item className={styles.iconContainer}>
               <Button onClick={this.removeFromCart}>
@@ -97,6 +214,7 @@ class Component extends React.Component {
 
 const mapDispatchToProps = dispatch => ({
   removeCartProduct: id => dispatch(removeCartProduct(id)),
+  updateCartProduct: updatedCartProduct => dispatch(updateCartProduct(updatedCartProduct)),
 });
 
 const Container = connect(null, mapDispatchToProps)(Component);

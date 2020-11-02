@@ -97,7 +97,24 @@ export const initialState = {
     },
   },
   cart: {
-    data: [],
+    data: [
+      {
+        id: '1',
+        photo: 'https://images.pexels.com/photos/289245/pexels-photo-289245.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        quantity: 1,
+        comment: 'czerwony',
+        price: 120,
+        totalPrice: 120,
+      },
+      {
+        id: '2',
+        photo: 'https://images.pexels.com/photos/3114009/pexels-photo-3114009.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+        quantity: 2,
+        comment: 'czarny i czerwony',
+        price: 300,
+        totalPrice: 600,
+      },
+    ],
     loading: {
       active: false,
       error: false,

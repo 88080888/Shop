@@ -96,12 +96,14 @@ class Component extends React.Component {
 
     const cartProduct = {};
 
-    if(orderData.price !== 0) {
+
+    if(orderData.totalprice !== 0) {
       cartProduct.photo = product.photo[0];
       cartProduct.name = product.name;
       cartProduct.quantity = orderData.quantity;
       cartProduct.price = orderData.totalPrice;
       cartProduct.comment = '';
+      cartProduct.totalPrice = orderData.totalPrice;
 
       addCartProduct(cartProduct);
     }
