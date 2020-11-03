@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACEA,YAAY",
+    "mappings": "ACEA,YAAY;ADDZ,OAAO,CAAC,mEAAI",
     "sources": [
         "global.scss",
         "settings.scss"

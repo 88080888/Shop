@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { getAllCartProducts } from '../../../redux/cartRedux';
 
 import { connect } from 'react-redux';
@@ -28,7 +28,7 @@ class Component extends React.Component {
     return(
       <div className={styles.root}>
         <Button className={styles.link} component={Link} to={`/cart`}>
-          <ShoppingCartIcon className={styles.icon} />
+          <ShoppingBasketIcon className={styles.icon} />
         </Button>
         <span className={styles.productCounter}>{this.cartProductCounter()}</span>
       </div>

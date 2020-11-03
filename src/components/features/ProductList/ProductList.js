@@ -17,7 +17,6 @@ const Component = ({ products }) => (
     direction='row'
     justify='space-between'
     alignItems='center'
-    spacing='3'
   >
     {products.map(product => (
       <Grid key={product.id} item>

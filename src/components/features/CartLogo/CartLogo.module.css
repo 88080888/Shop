@@ -8,8 +8,29 @@
           align-items: center;
 }
 
+.root .link {
+  right: -20px;
+}
+
+.root .link:hover {
+  color: #ce3535;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 .root .productCounter {
-  color: black;
+  color: white;
   margin-right: 80px;
+  background-color: #ce3535;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-weight: 600;
+  padding: 4px 10px;
+  z-index: 999;
+}
+
+.root .icon {
+  font-size: 40px;
 }
 /*# sourceMappingURL=CartLogo.module.css.map */

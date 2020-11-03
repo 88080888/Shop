@@ -1,6 +1,10 @@
 /* COLORS */
-.root .logo {
+.root {
   margin-left: 80px;
+}
+
+.root .logo {
+  margin-left: 200px;
 }
 
 .root .title {
@@ -9,6 +13,8 @@
 }
 
 .root .subtitle {
+  margin-top: 15px;
   margin-bottom: 0;
+  color: #ce3535;
 }
 /*# sourceMappingURL=ShopLogo.module.css.map */

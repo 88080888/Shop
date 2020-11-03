@@ -4,8 +4,27 @@
   display: flex;
   align-items: center;
 
+  .link {
+    right: -20px;
+    &:hover {
+      color: $color-three;
+      transform: scale(1.2);
+    }
+  }
+
   .productCounter {
-    color: $color-one;
+    color: $color-two;
     margin-right: 80px;
+    background-color: $color-three;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: 600;
+    padding: 4px 10px;
+    z-index: 999;
+  }  
+
+  .icon {
+    font-size: 40px;
   }
 }
