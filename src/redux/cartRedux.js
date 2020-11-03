@@ -12,6 +12,7 @@ const FETCH_ERROR = createActionName('FETCH_ERROR');
 const ADD_CART_PRODUCT = createActionName('ADD_CART_PRODUCT');
 const REMOVE_CART_PRODUCT = createActionName('REMOVE_CART_PRODUCT');
 const UPDATE_CART_PRODUCT = createActionName('UPDATE_CART_PRODUCT');
+const CLEAR_CART = createActionName('CLEAR_CART');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
@@ -20,6 +21,7 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 export const addCartProduct = payload => ({ payload, type: ADD_CART_PRODUCT});
 export const removeCartProduct = payload => ({ payload, type: REMOVE_CART_PRODUCT });
 export const updateCartProduct = payload => ({ payload, type: UPDATE_CART_PRODUCT });
+export const clearCart = payload => ({ payload, type: CLEAR_CART });
 
 /* reducer */
 export const reducer = (statePart = [], action = {}) => {
@@ -83,6 +85,12 @@ export const reducer = (statePart = [], action = {}) => {
               : cartProduct
           ),
         ],
+      };
+    }
+    case CLEAR_CART: {
+      return {
+        ...statePart,
+        data: [],
       };
     }
     default:

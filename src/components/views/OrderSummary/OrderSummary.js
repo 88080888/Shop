@@ -5,7 +5,7 @@ import { OrderSummaryList } from '../../features/OrderSummaryList/OrderSummaryLi
 import { OrderForm } from '../../features/OrderForm/OrderForm';
 
 import { connect } from 'react-redux';
-import { getAllCartProducts } from '../../../redux/cartRedux.js';
+import { getAllCartProducts, clearCart } from '../../../redux/cartRedux.js';
 import { addOrder } from '../../../redux/ordersRedux';
 
 import styles from './OrderSummary.module.scss';
@@ -26,6 +26,7 @@ class Component extends React.Component {
   static propTypes = {
     cartProducts: PropTypes.array,
     addOrder: PropTypes.func,
+    clearCartProducts: PropTypes.func,
   }
 
   totalCost() {
@@ -62,6 +63,20 @@ class Component extends React.Component {
     });
   }
 
+  clearCart() {
+    const { clearCartProducts } = this.props;
+    this.setState({
+      orderData: {
+        name: '',
+        surname: '',
+        email: '',
+        telephone: '',
+        ordered: '',
+      },
+    });
+    clearCartProducts();
+  }  
+
   submitForm = (event) => {
     const { orderData } = this.state;
     const { addOrder } = this.props;
@@ -76,15 +91,7 @@ class Component extends React.Component {
     if(!error) {
       addOrder(orderData);
       alert('Order submitted successfully');
-      this.setState({
-        orderData: {
-          name: '',
-          surname: '',
-          email: '',
-          telephone: '',
-          ordered: '',
-        },
-      });
+      this.clearCart();
     } else {
       alert(error);
     }
@@ -119,6 +126,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addOrder: orderData => dispatch(addOrder(orderData)),
+  clearCartProducts: () => dispatch(clearCart()),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
