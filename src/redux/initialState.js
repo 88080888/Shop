@@ -100,6 +100,7 @@ export const initialState = {
     data: [
       {
         id: '1',
+        name:'sexy-bra',
         photo: 'https://images.pexels.com/photos/289245/pexels-photo-289245.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
         quantity: 1,
         comment: 'czerwony',
@@ -108,6 +109,7 @@ export const initialState = {
       },
       {
         id: '2',
+        name:'open-bra',
         photo: 'https://images.pexels.com/photos/3114009/pexels-photo-3114009.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
         quantity: 2,
         comment: 'czarny i czerwony',

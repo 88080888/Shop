@@ -62,20 +62,6 @@ class Component extends React.Component {
     });
   }
 
-  clearCart() {
-    const { orderData } = this.state;
-
-    this.setState({
-      orderData: {
-        name: '',
-        surname: '',
-        email: '',
-        telephone: '',
-        ordered: '',
-      },
-    });
-  }
-
   submitForm = (event) => {
     const { orderData } = this.state;
     const { addOrder } = this.props;

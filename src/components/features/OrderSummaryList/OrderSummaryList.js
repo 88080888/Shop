@@ -29,7 +29,7 @@ const Component = ({cartProducts}) => (
           <TableCell>{cartProduct.name}</TableCell>
           <TableCell>{cartProduct.quantity}</TableCell>
           <TableCell>{cartProduct.comment}</TableCell>
-          <TableCell>{cartProduct.finalPrice}</TableCell>
+          <TableCell>{cartProduct.totalPrice} S$</TableCell>
         </TableRow>
       ))}
     </TableBody>

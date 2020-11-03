@@ -108,6 +108,7 @@ class Component extends React.Component {
       cartProduct.totalPrice = orderData.totalPrice;
 
       addCartProduct(cartProduct);
+      alert('Product added to the cart');
     }
     else {
       alert('Please pick at least one product');

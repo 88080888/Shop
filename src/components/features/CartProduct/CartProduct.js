@@ -20,7 +20,7 @@ class Component extends React.Component {
 
   state = {
     cartProductData: {
-      titalPrice: this.props.totalPrice,
+      totalPrice: this.props.totalPrice,
       quantity: this.props.quantity,
       comment: this.props.comment,
     },
