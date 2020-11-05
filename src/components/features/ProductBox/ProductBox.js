@@ -10,6 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import VisibilityIcon from '@material-ui/icons/Visibility';
 
 
 // import { connect } from 'react-redux';
@@ -31,10 +32,13 @@ const Component = ({ id, name, type, price, photo }) => (
         className={styles.photo}
       />
 
+      <VisibilityIcon className={styles.icon} />
+
+
       <CardContent>
         <Typography
           gutterBottom
-          variant='subtitle2'
+          variant='h5'
           component='h2'
           className={styles.cardTitle}
         >
@@ -46,7 +50,7 @@ const Component = ({ id, name, type, price, photo }) => (
           component='p'
           className={styles.cardBody}
         >
-          Prices start from {price}!
+          Prices start from {price}$!
         </Typography>
       </CardContent>
     </CardActionArea>
@@ -55,12 +59,12 @@ const Component = ({ id, name, type, price, photo }) => (
       <Button
         variant='contained'
         size='large'
-        color='primary'
+        color='secondary'
         component={NavLink}
         exact to={`/product/${id}`}
         className={styles.button}
       >
-        Show
+        Show more
       </Button>
     </CardActions>
 

@@ -1,6 +1,46 @@
 /* COLORS */
+.root {
+  margin-top: 20px;
+}
+
 .root .photo {
   height: 400px;
   width: 300px;
+  margin: auto;
+  position: relative;
+}
+
+.root .photo:hover .icon .icon {
+  display: inline;
+}
+
+.root .photo:hover {
+  opacity: 60%;
+}
+
+.root .button {
+  color: white;
+  width: 100%;
+}
+
+.root .cardClickableArea:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.root .cardBody, .root .cardTitle {
+  text-align: center;
+}
+
+.root .cardBody {
+  color: #ce3535;
+}
+
+.root .icon {
+  position: absolute;
+  top: 180px;
+  left: 140px;
+  font-size: 40px;
+  display: none;
 }
 /*# sourceMappingURL=ProductBox.module.css.map */

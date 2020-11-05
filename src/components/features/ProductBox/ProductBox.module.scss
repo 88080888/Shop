@@ -1,8 +1,48 @@
 @import '../../../styles/settings.scss';
 
 .root {
+  margin-top: 20px;
   .photo {
     height: 400px;
     width: 300px;
+    margin: auto;
+    position: relative;
+
+    &:hover .icon {
+      .icon {
+        display: inline;
+      }
+    }
+
+    &:hover {
+      opacity: 60%;
+    }
+  }
+
+
+  .button {
+    color: $color-two;
+    width: 100%;
+  }
+
+  .cardClickableArea:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .cardBody, .cardTitle {
+    text-align: center;
+  }
+
+  .cardBody {
+    color: $color-three;
+  }
+
+  .icon {
+    position: absolute;
+    top: 180px;
+    left: 140px;
+    font-size: 40px;
+    display: none;
   }
 }

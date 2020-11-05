@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ProductBox } from '../ProductBox/ProductBox';
 
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
@@ -15,11 +16,14 @@ const Component = ({ products }) => (
     container
     className={styles.root}
     direction='row'
-    justify='space-between'
+    justify='space-around'
     alignItems='center'
   >
+    <Grid item xs={12}>
+      <Paper elevation={0} className={styles.head}>OUR PRODUCTS</Paper>
+    </Grid>
     {products.map(product => (
-      <Grid key={product.id} item>
+      <Grid key={product.id} item >
         <ProductBox {...product} />
       </Grid>
     ))}  
