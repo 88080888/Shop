@@ -45,7 +45,7 @@ class Component extends React.Component {
           <Grid item xs={12}>
             <CartProductList cartProducts={cartProducts} />
           </Grid>
-          <Grid itex xs={12} className={styles.totalCostContainer}>
+          <Grid item xs={12} className={styles.totalCostContainer}>
             <Typography className={styles.title} gutterBottom variant="h4" component="h1">
               Total cost:{this.totalCost()}$
             </Typography>

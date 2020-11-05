@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { addCartProduct } from '../../../redux/cartRedux';
@@ -10,14 +11,14 @@ import { ProductCount } from '../../features/ProductCount/ProductCount';
 import { PhotoGallery } from '../../features/PhotoGallery/PhotoGallery';
 import { formInputNumberParser } from '../../../utils';
 
-//import styles from './Product.module.scss';
+import styles from './Product.module.scss';
 
 import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import AddIcon from '@material-ui/icons/Add';
 
 class Component extends React.Component {
 
@@ -121,24 +122,90 @@ class Component extends React.Component {
 
     return(
       <Paper>
-        <Card>
-          <CardContent>
-            <Typography>
-              {product.name}
+        <Grid container className={styles.gridContainer}>
+
+          <Grid item xs={12}>
+            <Typography               
+              className={styles.title}
+              gutterBottom
+              variant='h3'
+              component='h1'
+            >
+              {product.name}            
             </Typography>
-            <Typography>
+          </Grid>  
+
+          <Grid item xs={12}>
+            <Typography
+              variant='h4'
+              component='p'
+              className={styles.description}
+            >
               {product.description}
             </Typography>
-            <PhotoGallery images={product.photo} />
-            <ProductCount handleChange={this.handleChange} increase={this.increaseProductQuantity} decrease={this.decreaseProductQuantity} quantity={orderData.quantity} />
-            <Typography>
-              Price: {orderData.totalPrice} $
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button onClick={this.addToCart}>Add to cart</Button>
-          </CardActions>
-        </Card>
+          </Grid>
+
+          <Grid item xs={12} container>
+            
+            <Grid item xs={12} sm={6}>
+              <PhotoGallery
+                images={product.photo}
+              />
+            </Grid>
+
+
+            <Grid item xs container direction='column' className={styles.featuresContainer}>
+
+              <Grid item className={styles.productCounterContainer}>
+                <ProductCount
+                  handleChange={this.handleQuantityChange}
+                  increase={this.increaseProductQuantity}
+                  decrease={this.decreaseProductQuantity}
+                  quantity={orderData.quantity}
+                />
+              </Grid>
+              
+              <Grid item>
+                <Typography
+                  variant='h5'
+                  component='p'
+                  className={styles.totalPrice}
+                >
+                  Price: {orderData.totalPrice}$
+                </Typography>
+              </Grid>
+              
+              <Grid item container>
+                <Grid item xs={12} md={6} className={styles.buttonHomepage}>
+                  <Button
+                    variant='contained'
+                    size='large'
+                    color='primary'
+                    className={styles.button}
+                    component={NavLink}
+                    exact to={`/`}
+                    startIcon={<ArrowBackIosIcon />}
+                  >
+                  BACK TO HOMEPAGE
+                  </Button>
+                </Grid>
+
+                <Grid item xs={12} md={6} className={styles.buttonCart}>
+                  <Button
+                    variant='contained'
+                    size='large'
+                    color='primary'
+                    onClick={this.addToCart}
+                    className={styles.button}
+                    startIcon={<AddIcon />}
+                  >
+                    <span>ADD TO CART</span>
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Paper>
     );
   }
