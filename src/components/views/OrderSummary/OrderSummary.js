@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import { OrderSummaryList } from '../../features/OrderSummaryList/OrderSummaryList';
 import { OrderForm } from '../../features/OrderForm/OrderForm';
@@ -12,15 +13,21 @@ import styles from './OrderSummary.module.scss';
 
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import SendIcon from '@material-ui/icons/Send';
 
 class Component extends React.Component {
   state = {
-    name: '',
-    surname: '',
-    email: '',
-    telephone: '',
-    ordered: '',
-    orderDetails: this.props.cartProducts,
+    orderData: {
+      name: '',
+      surname: '',
+      email: '',
+      telephone: '',
+      ordered: '',
+      orderDetails: this.props.cartProducts,
+    }, 
   }
 
   static propTypes = {
@@ -70,7 +77,7 @@ class Component extends React.Component {
         name: '',
         surname: '',
         email: '',
-        telephone: '',
+        phone: '',
         ordered: '',
       },
     });
@@ -85,7 +92,7 @@ class Component extends React.Component {
 
     let error = null;
 
-    if(!orderData.name.length || !orderData.surname.length || !orderData.email.length || !orderData.telephone.length) error='All form fields should be filled';
+    if(!orderData.name.length || !orderData.surname.length || !orderData.email.length || !orderData.phone.length) error='All form fields should be filled';
     else if(orderData.name.length > 15 || orderData.surname.length > 20) error ='Name or surname is too long. Name max 15 characters, surname max 20';
 
     if(!error) {
@@ -103,18 +110,79 @@ class Component extends React.Component {
 
     return(
       <Paper>
-        <OrderSummaryList cartProducts={cartProducts} />
+        <Grid item xs={12}>
+          <Typography
+            className={styles.title}
+            gutterBottom
+            variant='h3'
+            component='h1'
+          >
+            ORDER SUMMARY
+          </Typography>
+        </Grid>
 
-        <Typography className={styles.title} gutterBottom variant="h4" component="h1">
-          Total cost:{this.totalCost()}$
-        </Typography>
+        <Grid item xs={12} className={styles.orderList}>
+          <OrderSummaryList cartProducts={cartProducts} />
+        </Grid>
+        
+        <Grid item xs={12} className={styles.totalCostContainer}>
+          <Typography className={styles.title} gutterBottom variant="h4" component="span">
+            Total cost:{this.totalCost()}$
+          </Typography>
+        </Grid>
 
-        <OrderForm
-          orderData={orderData}
-          handleChange={this.handleChange}
-          submitForm={this.submitForm}
-          setOrderDate={this.setOrderDate}
-        />
+        <Grid item xs={12} className={styles.contactFormHeaderContainer}>
+          <Typography
+            gutterBottom
+            variant='h5'
+            component='span'
+          >
+              Contact form
+          </Typography>
+        </Grid>
+
+        <Grid item xs={12} sm={8} md={6} className={styles.form}>
+          <OrderForm
+            orderData={orderData}
+            handleChange={this.handleChange}
+            submitForm={this.submitForm}
+            setOrderDate={this.setOrderDate}
+          />
+        </Grid>
+
+        <Grid item container className={styles.buttonsContainer}>
+
+          <Grid item xs={12} sm={5} className={styles.buttonCart}>
+            <Button
+              variant='contained'
+              size='large'
+              color='primary'
+              component={NavLink}
+              exact to={`/cart`}
+              className={styles.button}
+              startIcon={<ArrowBackIosIcon />}
+            >
+              BACK TO CART
+            </Button>
+          </Grid>
+
+          <Grid item xs={12} sm={5} className={styles.buttonSubmitOrder}>
+            <Button
+              variant='contained'
+              color='primary'
+              size='large'
+              className={styles.button}
+              type='submit'
+              onClick={this.setOrderParams}
+              form='orderSummaryForm'
+              endIcon={<SendIcon />}
+            >
+              SUBMIT ORDER
+            </Button>
+          </Grid>
+
+        </Grid>
+
       </Paper>
     );
   }
