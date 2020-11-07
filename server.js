@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 /* API ENDPOINTS */
-//app.use('/api', `endpoint z importu powyzej`);
+app.use('/api', productRoute);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {

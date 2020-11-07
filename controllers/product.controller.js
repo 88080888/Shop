@@ -20,7 +20,7 @@ exports.getProductById = async (req, res) => {
             res.json(arrayResult);
         }
     }
-    catch{
+    catch(err){
         res.status(500).json(err);
     }
 };

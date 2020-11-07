@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getProductById } from '../../../redux/productsRedux';
+import { getProductById, getProductByIdRequest } from '../../../redux/productsRedux';
 import { addCartProduct } from '../../../redux/cartRedux';
 
 import { ProductCount } from '../../features/ProductCount/ProductCount';
@@ -24,7 +24,7 @@ class Component extends React.Component {
 
   state = {
     orderData: {
-      finalPrice: 0,
+      totalPrice: 0,
       quantity: 0,
     },
   }
@@ -32,7 +32,13 @@ class Component extends React.Component {
   static propTypes = {
     product: PropTypes.object,
     addCartProduct: PropTypes.func,
+    getProductByIdRequest: PropTypes.func,
   }
+
+  componentDidMount() {
+    const { getProductByIdRequest } = this.props;
+    getProductByIdRequest();
+  }  
 
   handleChange = (event) => {
     const { orderData } = this.state;
@@ -215,8 +221,9 @@ const mapStateToProps = (state, props) => ({
   product: getProductById(state, props.match.params.id),
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch,props) => ({
   addCartProduct: cartProduct => dispatch(addCartProduct(cartProduct)),
+  getProductByIdRequest: () => dispatch(getProductByIdRequest(props.match.params.id)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

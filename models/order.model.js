@@ -7,6 +7,7 @@ const orderDetailsSchema = new mongoose.Schema({
   totalPrice: { type: Number, required: true },
   comment: { type: String },
   price: { type: Number, required: true },
+  productId: { type: String, required: true },
 });
 
 const orderSchema = new mongoose.Schema({

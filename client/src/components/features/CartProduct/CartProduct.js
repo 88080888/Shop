@@ -36,6 +36,7 @@ class Component extends React.Component {
     removeCartProduct: PropTypes.func,
     totalPrice: PropTypes.number,
     updateCartProduct: PropTypes.func,
+    productId: PropTypes.string,
   }
 
   removeFromCart = () => {
@@ -149,14 +150,14 @@ class Component extends React.Component {
   }
 
   render() {
-    const { name, photo } = this.props;
+    const { productId, name, photo } = this.props;
     const { cartProductData } = this.state;
 
     return(
       <Grid container className={styles.root} spacing={2}>
 
         <Grid item>
-          <ButtonBase className={styles.imageContainer}>
+          <ButtonBase className={styles.imageContainer} exact to={`/product/${productId}`}>
             <img className={styles.image} src={photo} alt='product' />
           </ButtonBase>
         </Grid>
