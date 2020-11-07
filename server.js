@@ -3,7 +3,9 @@ const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
 
-// MIEJSCE NA IMPORT PLIKÓW Z ENDPOINTAMI
+const cartRoute = require('./routes/cart.routes');
+const orderRoute = require('./routes/order.routes');
+const productRoute = require('./routes/product.routes');
 
 const app = express();
 
