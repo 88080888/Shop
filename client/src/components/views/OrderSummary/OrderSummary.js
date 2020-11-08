@@ -7,7 +7,8 @@ import { OrderForm } from '../../features/OrderForm/OrderForm';
 
 import { connect } from 'react-redux';
 import { getAllCartProducts, clearCart } from '../../../redux/cartRedux.js';
-import { addOrder } from '../../../redux/ordersRedux';
+import { addOrderRequest } from '../../../redux/ordersRedux';
+
 
 import styles from './OrderSummary.module.scss';
 
@@ -26,13 +27,14 @@ class Component extends React.Component {
       email: '',
       telephone: '',
       ordered: '',
+      totalCost: '',
       orderDetails: this.props.cartProducts,
     }, 
   }
 
   static propTypes = {
     cartProducts: PropTypes.array,
-    addOrder: PropTypes.func,
+    addOrderRequest: PropTypes.func,
     clearCartProducts: PropTypes.func,
   }
 
@@ -58,14 +60,16 @@ class Component extends React.Component {
     });
   }
 
-  setOrderDate = () => {
+  setOrderParams = () => {
     const { orderData } = this.state;
     const date = new Date();
+    const totalCost = this.totalCost();
 
     this.setState({
       orderData: {
         ...orderData,
         ordered: date,
+        totalCost: totalCost,
       },
     });
   }
@@ -79,6 +83,7 @@ class Component extends React.Component {
         email: '',
         phone: '',
         ordered: '',
+        totalCost: '',
       },
     });
     clearCartProducts();
@@ -86,7 +91,7 @@ class Component extends React.Component {
 
   submitForm = (event) => {
     const { orderData } = this.state;
-    const { addOrder } = this.props;
+    const { addOrderRequest } = this.props;
 
     event.preventDefault();
 
@@ -96,7 +101,7 @@ class Component extends React.Component {
     else if(orderData.name.length > 15 || orderData.surname.length > 20) error ='Name or surname is too long. Name max 15 characters, surname max 20';
 
     if(!error) {
-      addOrder(orderData);
+      addOrderRequest(orderData);
       alert('Order submitted successfully');
       this.clearCart();
     } else {
@@ -193,7 +198,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addOrder: orderData => dispatch(addOrder(orderData)),
+  addOrderRequest: orderData => dispatch(addOrderRequest(orderData)),
   clearCartProducts: () => dispatch(clearCart()),
 });
 
