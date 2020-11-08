@@ -1,2 +1,1 @@
 export const API_URL = (process.env.NODE_ENV === 'production') ? '/api' : 'http://localhost:5000/api';
-export const IMAGES_URL = (process.env.NODE_ENV === 'production') ? '/products' : 'http://localhost:5000/products';
