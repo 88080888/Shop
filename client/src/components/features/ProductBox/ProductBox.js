@@ -18,12 +18,12 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 
 import styles from './ProductBox.module.scss';
 
-const Component = ({ id, name, type, price, photo }) => (
+const Component = ({ _id, name, type, price, photo }) => (
   <Card className={styles.root}>
     <CardActionArea
       className={styles.cardClickableArea}
       component={NavLink}
-      exact to={`product/${id}`}
+      exact to={`product/${_id}`}
     >
       <CardMedia
         component='img'
@@ -61,7 +61,7 @@ const Component = ({ id, name, type, price, photo }) => (
         size='large'
         color='secondary'
         component={NavLink}
-        exact to={`/product/${id}`}
+        exact to={`/product/${_id}`}
         className={styles.button}
       >
         Show more
@@ -72,7 +72,7 @@ const Component = ({ id, name, type, price, photo }) => (
 );
 
 Component.propTypes = {
-  id: PropTypes.string,
+  _id: PropTypes.string,
   name: PropTypes.string,
   type: PropTypes.string,
   price: PropTypes.number,

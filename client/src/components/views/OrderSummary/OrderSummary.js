@@ -6,7 +6,7 @@ import { OrderSummaryList } from '../../features/OrderSummaryList/OrderSummaryLi
 import { OrderForm } from '../../features/OrderForm/OrderForm';
 
 import { connect } from 'react-redux';
-import { getAllCartProducts, clearCart } from '../../../redux/cartRedux.js';
+import { getAllCartProducts, clearCartRequest, getCartProductsRequest } from '../../../redux/cartRedux.js';
 import { addOrderRequest } from '../../../redux/ordersRedux';
 
 
@@ -37,6 +37,13 @@ class Component extends React.Component {
     cartProducts: PropTypes.array,
     addOrderRequest: PropTypes.func,
     clearCartProducts: PropTypes.func,
+    getCartProducts: PropTypes.func,
+  }
+
+  componentDidMount() {
+    const { getCartProducts } = this.props;
+
+    getCartProducts();
   }
 
   totalCost() {
@@ -101,7 +108,7 @@ class Component extends React.Component {
     clearCartProducts();
   }  
 
-  submitForm = (event) => {
+  submitForm = async(event) => {
     const { orderData } = this.state;
     const { addOrderRequest, cartProducts } = this.props;
 
@@ -115,7 +122,7 @@ class Component extends React.Component {
     else if(orderData.name.length > 15 || orderData.surname.length > 20) error ='Name or surname is too long. Name max 15 characters, surname max 20';
 
     if(!error) {
-      addOrderRequest(orderData);
+      await addOrderRequest(orderData);
       alert('Order submitted successfully');
       this.clearCart();
     } else {
@@ -165,7 +172,7 @@ class Component extends React.Component {
             orderData={orderData}
             handleChange={this.handleChange}
             submitForm={this.submitForm}
-            setOrderDate={this.setOrderDate}
+            formId='orderSummaryForm'
           />
         </Grid>
 
@@ -213,7 +220,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   addOrderRequest: orderData => dispatch(addOrderRequest(orderData)),
-  clearCartProducts: () => dispatch(clearCart()),
+  clearCartProducts: () => dispatch(clearCartRequest()),
+  getCartProducts: () => dispatch(getCartProductsRequest()),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

@@ -2,7 +2,7 @@ export const initialState = {
   products: {
     data: [
       {
-        'id': 1,
+        'id': '1',
         'name':'open-bra',
         'type':'bra',
         'price': 60,

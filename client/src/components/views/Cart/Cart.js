@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getAllCartProducts } from '../../../redux/cartRedux';
+import { getAllCartProducts, getCartProductsRequest } from '../../../redux/cartRedux';
 
 import { CartProductList } from '../../features/CartProductList/CartProductList';
 import Grid from '@material-ui/core/Grid';
@@ -18,6 +18,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 class Component extends React.Component {
   static propTypes = {
     cartProducts: PropTypes.array,
+    getCartProducts: PropTypes.func,
   }
 
   totalCost() {
@@ -28,6 +29,12 @@ class Component extends React.Component {
     cartProducts.map(cartProduct => totalCost += cartProduct.totalPrice);
 
     return totalCost;
+  }
+
+  componentDidMount() {
+    const { getCartProducts } = this.props;
+
+    getCartProducts();
   }
 
   render() {
@@ -88,11 +95,11 @@ const mapStateToProps = state => ({
   cartProducts: getAllCartProducts(state),
 });
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+  getCartProducts: () => dispatch(getCartProductsRequest()),
+});
 
-const Container = connect(mapStateToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   //Component as Cart,

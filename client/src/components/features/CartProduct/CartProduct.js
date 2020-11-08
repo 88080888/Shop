@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { ProductCount } from '../ProductCount/ProductCount';
 import { connect } from 'react-redux';
-import { removeCartProduct, updateCartProduct } from '../../../redux/cartRedux.js';
+import { removeCartProductRequest, updateCartProductRequest } from '../../../redux/cartRedux.js';
 import { formInputNumberParser } from '../../../utils';
 
 import styles from './CartProduct.module.scss';
@@ -214,8 +214,8 @@ class Component extends React.Component {
 // });
 
 const mapDispatchToProps = dispatch => ({
-  removeCartProduct: id => dispatch(removeCartProduct(id)),
-  updateCartProduct: updatedCartProduct => dispatch(updateCartProduct(updatedCartProduct)),
+  removeCartProduct: id => dispatch(removeCartProductRequest(id)),
+  updateCartProduct: updatedCartProduct => dispatch(updateCartProductRequest(updatedCartProduct)),
 });
 
 const Container = connect(null, mapDispatchToProps)(Component);

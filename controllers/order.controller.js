@@ -2,7 +2,7 @@ const Order = require('../models/order.model');
 
 exports.addNewOrder = async (req, res) => {
   try {
-      const { name, message, email, phone, preferredContact, totalCost } = req.body;
+      const { name, message, email, phone, totalCost } = req.body;
 
       let orderCheck = false;
       let orderErrorCheck = false;
@@ -23,6 +23,7 @@ exports.addNewOrder = async (req, res) => {
         && totalCost > 0
         && req.body.orderDetails.length > 0
         && orderCheck
+        && message.length <= 100
         && !orderErrorCheck
       ) {
         const newOrder = new Order({ ...req.body });

@@ -5,7 +5,7 @@ import uniqid from 'uniqid';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getProductById, getProductByIdRequest } from '../../../redux/productsRedux';
-import { addCartProduct } from '../../../redux/cartRedux';
+import { addCartProductRequest } from '../../../redux/cartRedux';
 
 import { ProductCount } from '../../features/ProductCount/ProductCount';
 import { PhotoGallery } from '../../features/PhotoGallery/PhotoGallery';
@@ -31,7 +31,7 @@ class Component extends React.Component {
 
   static propTypes = {
     product: PropTypes.object,
-    addCartProduct: PropTypes.func,
+    addCartProductRequest: PropTypes.func,
     getProductByIdRequest: PropTypes.func,
   }
 
@@ -100,7 +100,7 @@ class Component extends React.Component {
 
   addToCart = () => {
     const { orderData } = this.state;
-    const { product, addCartProduct } = this.props;
+    const { product, addCartProductRequest } = this.props;
 
     const cartProduct = {};
 
@@ -113,8 +113,9 @@ class Component extends React.Component {
       cartProduct.price = orderData.totalPrice;
       cartProduct.comment = '';
       cartProduct.totalPrice = orderData.totalPrice;
+      cartProduct.productId = product._id;
 
-      addCartProduct(cartProduct);
+      addCartProductRequest(cartProduct);
       alert('Product added to the cart');
     }
     else {
@@ -222,7 +223,7 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = (dispatch,props) => ({
-  addCartProduct: cartProduct => dispatch(addCartProduct(cartProduct)),
+  addCartProductRequest: cartProduct => dispatch(addCartProductRequest(cartProduct)),
   getProductByIdRequest: () => dispatch(getProductByIdRequest(props.match.params.id)),
 });
 

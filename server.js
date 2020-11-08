@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 /* API ENDPOINTS */
 app.use('/api', productRoutes);
 app.use('/api', orderRoutes);
+app.use('/api', cartRoutes);
 
 /* API ERROR PAGES */
 app.use('/api', (req, res) => {
@@ -31,10 +32,11 @@ app.use('*', (req, res) => {
 });
 
 /* MONGOOSE */
-mongoose.connect('mongodb://localhost:27017/Shop', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/lingerieDB', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
+
 db.once('open', () => {
-  console.log('Successfully connected to the database');
+  console.log('Connected to the database');
 });
 db.on('error', err => console.log('Error: ' + err));
 

@@ -4,7 +4,7 @@ import { API_URL } from '../config';
 /* selectors */
 export const getAllProducts = ({products}) => products.data;
 export const getProductById = ({products}, productId) => {
-  const productData = products.data.filter(product => product.id === productId);
+  const productData = products.data.filter(product => product._id === productId);
   return productData[0];
 };
 

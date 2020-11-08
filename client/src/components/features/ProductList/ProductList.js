@@ -23,7 +23,7 @@ const Component = ({ products }) => (
       <Paper elevation={0} className={styles.head}>OUR PRODUCTS</Paper>
     </Grid>
     {products.map(product => (
-      <Grid key={product.id} item >
+      <Grid key={product._id} item >
         <ProductBox {...product} />
       </Grid>
     ))}  

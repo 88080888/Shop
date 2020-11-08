@@ -7,12 +7,12 @@ import PropTypes from 'prop-types';
 import styles from './OrderForm.module.scss';
 
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 
-const Component = ({submitForm, orderData, setOrderDate, handleChange}) => (
+const Component = ({submitForm, orderData, setOrderDate, handleChange, formId}) => (
   <form
     className={styles.form}
     onSubmit={submitForm}
+    id={formId}
   >
     <TextField
       id="name"
@@ -82,7 +82,7 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange}) => (
 Component.propTypes = {
   submitForm: PropTypes.func,
   orderData: PropTypes.object,
-  setOrderDate: PropTypes.func,
+  formId: PropTypes.string,
   handleChange: PropTypes.func,
 };
 
