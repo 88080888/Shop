@@ -25,7 +25,8 @@ class Component extends React.Component {
       name: '',
       surname: '',
       email: '',
-      telephone: '',
+      phone: '',
+      message: '',
       ordered: '',
       totalCost: '',
       orderDetails: this.props.cartProducts,
@@ -50,14 +51,24 @@ class Component extends React.Component {
 
   handleChange = (event) => {
     const { orderData } = this.state;
-    const { value, id } = event.target;
+    const { value, id, name } = event.target;
 
-    this.setState({
-      orderData: {
-        ...orderData,
-        [id]: value,
-      },
-    });
+    if(id) {
+      this.setState({
+        orderData: {
+          ...orderData,
+          [id]: value,
+        },
+      })
+    }
+    else {
+      this.setState({
+        orderData: {
+          ...orderData,
+          [name]: value,
+        },
+      });
+    }
   }
 
   setOrderParams = () => {
@@ -82,6 +93,7 @@ class Component extends React.Component {
         surname: '',
         email: '',
         phone: '',
+        message: '',
         ordered: '',
         totalCost: '',
       },
@@ -91,13 +103,15 @@ class Component extends React.Component {
 
   submitForm = (event) => {
     const { orderData } = this.state;
-    const { addOrderRequest } = this.props;
+    const { addOrderRequest, cartProducts } = this.props;
 
     event.preventDefault();
 
     let error = null;
 
-    if(!orderData.name.length || !orderData.surname.length || !orderData.email.length || !orderData.phone.length) error='All form fields should be filled';
+    if(cartProducts.length === 0) error='Your cart is empty!';
+
+    if(!orderData.name.length || !orderData.surname.length || !orderData.email.length || !orderData.phone) error='All form fields should be filled';
     else if(orderData.name.length > 15 || orderData.surname.length > 20) error ='Name or surname is too long. Name max 15 characters, surname max 20';
 
     if(!error) {

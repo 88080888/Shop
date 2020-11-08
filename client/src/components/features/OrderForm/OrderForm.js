@@ -25,6 +25,7 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange}) => (
       fullWidth
       className={styles.formFieldFullWidth}
       onChange={handleChange}
+      value={orderData.name}
     />
     <TextField
       id="surname"
@@ -37,6 +38,7 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange}) => (
       fullWidth
       className={styles.formFieldFullWidth}
       onChange={handleChange}
+      value={orderData.surname}
     />
     <TextField
       id="email"
@@ -47,25 +49,33 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange}) => (
       fullWidth
       className={styles.formFieldFullWidth}
       onChange={handleChange}
+      value={orderData.email}
     />
     <TextField
-      id="telephone"
+      id="phone"
       label="Phone number"
       variant="outlined"
       type="tel"
       className={styles.formFieldPartialWidth}
       onChange={handleChange}
+      value={orderData.phone}
     />
-    <Button
-      variant="outlined"
-      color="primary"
-      size="large"
-      className={styles.button}
-      type="submit"
-      onClick={setOrderDate}
-    >
-      Submit Order Form
-    </Button>
+
+    <TextField
+      name='message'
+      label='Message'
+      variant='outlined'
+      multiline
+      rows={4}
+      rowsMax={4}
+      inputProps={{
+        maxLength: 100,
+      }}
+      className={styles.formFieldFullWidth}
+      onChange={handleChange}
+      value={orderData.message}
+    />
+
   </form>
 );
 
