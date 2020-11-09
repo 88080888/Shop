@@ -1,2 +1,10 @@
 /* COLORS */
+.root {
+  margin: 50px 120px;
+}
+
+.root .productCounterContainer {
+  text-align: center;
+  margin: 50px;
+}
 /*# sourceMappingURL=Product.module.css.map */

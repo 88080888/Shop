@@ -19,6 +19,7 @@ const Component = ( {children} ) => (
 
     <Container 
       className={styles.contentBody}
+      maxWidth='xl'
     >
       <Toolbar />
       <Toolbar className={styles.bodyToolbar} />

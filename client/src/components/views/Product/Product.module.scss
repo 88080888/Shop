@@ -1,4 +1,10 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 50px 120px;
+
+  .productCounterContainer {
+    text-align: center;
+    margin: 50px;
+  }
+}

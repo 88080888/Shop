@@ -3,18 +3,25 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Menu.module.scss';
 
-import { BottomNavigation } from '@material-ui/core';
+import { Menu } from '@material-ui/core';
+import { MenuItem } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 class Component extends React.Component {
 
+  chandleLingerie(type,value) {
+    if (type === 'bra') {
+      this.props.filter(value)
+    }
+  }
+
   render() {
     return(
-      <BottomNavigation className={styles.root}>
-        <BottomNavigation label="Recents"  />bra
-        <BottomNavigation label="Favorites" />pants
-        <BottomNavigation label="Nearby"  />
-        <BottomNavigation label="Folder" />
-      </BottomNavigation>
+      <div>
+        <Button onClick={event => this.handleLingerie('bra', event.currentTarget.value)}>
+        Open Menu
+        </Button>
+      </div>
     )}
 }
 

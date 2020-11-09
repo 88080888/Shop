@@ -7,7 +7,6 @@ import { Menu } from '../../features/Menu/Menu';
 const Component = () => (
   <div className={styles.root}>
     <ShopLogo />
-    <Menu />
     <CartLogo />
   </div>
 );

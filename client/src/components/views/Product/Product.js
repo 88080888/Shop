@@ -128,89 +128,90 @@ class Component extends React.Component {
     const { orderData } = this.state;
 
     return(
-      <Paper>
-        <Grid container className={styles.gridContainer}>
+      <Paper className={styles.root}>
+        <Grid container xs={12} spacing={2} className={styles.gridContainer}>
 
-          <Grid item xs={12}>
-            <Typography               
-              className={styles.title}
-              gutterBottom
-              variant='h3'
-              component='h1'
-            >
-              {product.name}            
-            </Typography>
-          </Grid>  
+          <Grid item xs={12} sm={6}>
+                <PhotoGallery
+                  images={product.photo}
+                />
+          </Grid>
 
-          <Grid item xs={12}>
-            <Typography
+          <Grid item xs={8} sm container>
+            <Grid item item xs container direction="column" spacing={2}>
+              <Typography               
+                className={styles.title}
+                gutterBottom
+                variant='h3'
+                component='h1'
+              >
+                {product.name}            
+              </Typography>
+              <Typography
               variant='h4'
               component='p'
               className={styles.description}
-            >
+              >
               {product.description}
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12} container>
-            
-            <Grid item xs={12} sm={6}>
-              <PhotoGallery
-                images={product.photo}
-              />
-            </Grid>
-
+              </Typography>
+              <Typography
+                variant='h5'
+                component='p'
+                className={styles.totalPrice}
+              >
+                Price: {orderData.totalPrice}$
+              </Typography>
 
             <Grid item xs container direction='column' className={styles.featuresContainer}>
 
-              <Grid item className={styles.productCounterContainer}>
-                <ProductCount
-                  handleChange={this.handleQuantityChange}
-                  increase={this.increaseProductQuantity}
-                  decrease={this.decreaseProductQuantity}
-                  quantity={orderData.quantity}
-                />
-              </Grid>
-              
-              <Grid item>
-                <Typography
-                  variant='h5'
-                  component='p'
-                  className={styles.totalPrice}
-                >
-                  Price: {orderData.totalPrice}$
-                </Typography>
-              </Grid>
-              
-              <Grid item container>
-                <Grid item xs={12} md={6} className={styles.buttonHomepage}>
-                  <Button
-                    variant='contained'
-                    size='large'
-                    color='primary'
-                    className={styles.button}
-                    component={NavLink}
-                    exact to={`/`}
-                    startIcon={<ArrowBackIosIcon />}
-                  >
-                  BACK TO HOMEPAGE
-                  </Button>
-                </Grid>
+            <Grid item className={styles.productCounterContainer}>
+              <ProductCount
+                handleChange={this.handleQuantityChange}
+                increase={this.increaseProductQuantity}
+                decrease={this.decreaseProductQuantity}
+                quantity={orderData.quantity}
+              />
+            </Grid>
 
-                <Grid item xs={12} md={6} className={styles.buttonCart}>
-                  <Button
-                    variant='contained'
-                    size='large'
-                    color='primary'
-                    onClick={this.addToCart}
-                    className={styles.button}
-                    startIcon={<AddIcon />}
-                  >
-                    <span>ADD TO CART</span>
-                  </Button>
-                </Grid>
+            <Grid item container>
+              <Grid item xs={12} md={6} className={styles.buttonHomepage}>
+                <Button
+                  variant='contained'
+                  size='large'
+                  color='primary'
+                  className={styles.button}
+                  component={NavLink}
+                  exact to={`/`}
+                  startIcon={<ArrowBackIosIcon />}
+                >
+                BACK TO HOMEPAGE
+                </Button>
+              </Grid>
+
+              <Grid item xs={12} md={6} className={styles.buttonCart}>
+                <Button
+                  variant='contained'
+                  size='large'
+                  color='primary'
+                  onClick={this.addToCart}
+                  className={styles.button}
+                  startIcon={<AddIcon />}
+                >
+                  <span>ADD TO CART</span>
+                </Button>
               </Grid>
             </Grid>
+            </Grid>
+            </Grid>  
+          </Grid>
+
+
+          <Grid item xs={12} container>
+            
+
+
+
+
           </Grid>
         </Grid>
       </Paper>
