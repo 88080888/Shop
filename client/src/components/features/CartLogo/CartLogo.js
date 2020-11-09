@@ -42,11 +42,6 @@ class Component extends React.Component {
   }
 }
 
-Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
 const mapStateToProps = state => ({
   cartProducts: getAllCartProducts(state),
 });
