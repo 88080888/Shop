@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AACE,KADG,CACH,UAAU,CAAC;EACT,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "OrderSummaryList.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "OrderSummaryList.module.css"
+}

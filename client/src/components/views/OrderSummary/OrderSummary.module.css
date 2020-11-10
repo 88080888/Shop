@@ -1,5 +1,24 @@
 /* COLORS */
 .root {
-  margin: 50px 150px;
+  margin: 50px 300px;
+}
+
+.root .buttonBackCart {
+  background-color: black;
+  color: white;
+}
+
+.root .buttonBackCart:hover {
+  color: white;
+  background-color: #333333;
+}
+
+.root .buttonSend {
+  background-color: #f50057;
+  color: white;
+}
+
+.root .buttonSend:hover {
+  opacity: 80%;
 }
 /*# sourceMappingURL=OrderSummary.module.css.map */

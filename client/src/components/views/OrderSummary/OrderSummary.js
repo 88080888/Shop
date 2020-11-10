@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import { getAllCartProducts, clearCartRequest, getCartProductsRequest } from '../../../redux/cartRedux.js';
 import { addOrderRequest } from '../../../redux/ordersRedux';
 
-
 import styles from './OrderSummary.module.scss';
 
 import Paper from '@material-ui/core/Paper';
@@ -135,7 +134,7 @@ class Component extends React.Component {
     const { orderData } = this.state;
 
     return(
-      <Paper>
+      <Paper className={styles.root}>
         <Grid item xs={12}>
           <Typography
             className={styles.title}
@@ -182,10 +181,9 @@ class Component extends React.Component {
             <Button
               variant='contained'
               size='large'
-              color='primary'
               component={NavLink}
               exact to={`/cart`}
-              className={styles.button}
+              className={styles.buttonBackCart}
               startIcon={<ArrowBackIosIcon />}
             >
               BACK TO CART
@@ -197,7 +195,7 @@ class Component extends React.Component {
               variant='contained'
               color='primary'
               size='large'
-              className={styles.button}
+              className={styles.buttonSend}
               type='submit'
               onClick={this.setOrderParams}
               form='orderSummaryForm'
@@ -227,7 +225,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  //Component as OrderSummary,
   Container as OrderSummary,
   Component as OrderSummaryComponent,
 };

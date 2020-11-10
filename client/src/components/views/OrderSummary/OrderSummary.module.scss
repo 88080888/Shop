@@ -1,6 +1,23 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  margin: 50px 150px;
+  margin: 50px 300px;
 
+  .buttonBackCart {
+    background-color: $color-one;
+    color: $color-two;
+  
+    &:hover {
+      color: $color-two;
+      background-color: rgb(51, 51, 51)
+    }
+  }
+
+  .buttonSend {
+    background-color: $color-three;
+    color: $color-two;
+    &:hover {
+      opacity: 80%;
+    }
+  }
 }

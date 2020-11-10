@@ -14,13 +14,13 @@ import TableBody from '@material-ui/core/TableBody';
 
 
 const Component = ({cartProducts}) => (
-  <Table aria-label='simple table'>
+  <Table aria-label='simple table' className={styles.root}>
     <TableHead>
       <TableRow>
-        <TableCell>Product</TableCell>
-        <TableCell>Quantity</TableCell>
-        <TableCell>Comment</TableCell>
-        <TableCell>Price</TableCell>
+        <TableCell  className={styles.tableHead}>Product</TableCell>
+        <TableCell  className={styles.tableHead}>Quantity</TableCell>
+        <TableCell  className={styles.tableHead}>Comment</TableCell>
+        <TableCell  className={styles.tableHead}>Price</TableCell>
       </TableRow>
     </TableHead>
     <TableBody>
