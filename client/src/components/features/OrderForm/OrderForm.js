@@ -15,9 +15,9 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange, formId}) 
     id={formId}
   >
     <TextField
-      id="name"
-      label="Name"
-      variant="outlined"
+      id='name'
+      label='Name'
+      variant='outlined'
       InputProps={{
         minLength: 10,
       }}
@@ -28,12 +28,9 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange, formId}) 
       value={orderData.name}
     />
     <TextField
-      id="surname"
-      label="Surname"
-      variant="outlined"
-      InputProps={{
-        minLength: 10,
-      }}
+      id='surname'
+      label='Surname'
+      variant='outlined'
       required
       fullWidth
       className={styles.formFieldFullWidth}
@@ -41,10 +38,20 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange, formId}) 
       value={orderData.surname}
     />
     <TextField
-      id="email"
-      label="Email"
-      variant="outlined"
-      type="email"
+      id='address'
+      label='Address'
+      variant='outlined'
+      required
+      fullWidth
+      className={styles.formFieldFullWidth}
+      onChange={handleChange}
+      value={orderData.address}
+    />
+    <TextField
+      id='email'
+      label='Email'
+      variant='outlined'
+      type='email'
       required
       fullWidth
       className={styles.formFieldFullWidth}
@@ -52,16 +59,17 @@ const Component = ({submitForm, orderData, setOrderDate, handleChange, formId}) 
       value={orderData.email}
     />
     <TextField
-      id="phone"
-      label="Phone number"
-      variant="outlined"
-      type="tel"
+      id='phone'
+      label='Phone number'
+      variant='outlined'
+      type='tel'
       className={styles.formFieldPartialWidth}
       onChange={handleChange}
       value={orderData.phone}
     />
 
     <TextField
+    fullWidth
       name='message'
       label='Message'
       variant='outlined'

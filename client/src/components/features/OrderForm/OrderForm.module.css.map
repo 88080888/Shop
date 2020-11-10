@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,MAAM,EAAE,MAAM;CACf",
+    "sources": [
+        "OrderForm.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "OrderForm.module.css"
+}

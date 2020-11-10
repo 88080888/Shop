@@ -23,6 +23,7 @@ class Component extends React.Component {
     orderData: {
       name: '',
       surname: '',
+      address: '',
       email: '',
       phone: '',
       message: '',
@@ -97,6 +98,7 @@ class Component extends React.Component {
       orderData: {
         name: '',
         surname: '',
+        address:'',
         email: '',
         phone: '',
         message: '',
@@ -117,7 +119,7 @@ class Component extends React.Component {
 
     if(cartProducts.length === 0) error='Your cart is empty!';
 
-    if(!orderData.name.length || !orderData.surname.length || !orderData.email.length || !orderData.phone) error='All form fields should be filled';
+    if(!orderData.name.length || !orderData.surname.length || !orderData.address.length || !orderData.email.length || !orderData.phone) error='All form fields should be filled';
     else if(orderData.name.length > 15 || orderData.surname.length > 20) error ='Name or surname is too long. Name max 15 characters, surname max 20';
 
     if(!error) {
