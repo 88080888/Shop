@@ -19,6 +19,8 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import AddIcon from '@material-ui/icons/Add';
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 
 class Component extends React.Component {
 
@@ -137,7 +139,7 @@ class Component extends React.Component {
                 />
           </Grid>
 
-          <Grid item xs={8} sm container>
+          <Grid item xs={12} sm={6} container>
             <Grid item item xs container direction="column" spacing={2}>
               <Typography               
                 className={styles.title}
@@ -162,26 +164,51 @@ class Component extends React.Component {
                 Price: {orderData.totalPrice}$
               </Typography>
 
-            <Grid item xs container direction='column' className={styles.featuresContainer}>
+            <Grid item xs container className={styles.featuresContainer}>
 
-            <Grid item className={styles.productCounterContainer}>
-              <ProductCount
-                handleChange={this.handleQuantityChange}
-                increase={this.increaseProductQuantity}
-                decrease={this.decreaseProductQuantity}
-                quantity={orderData.quantity}
-              />
-            </Grid>
+              <Grid item className={styles.productCounterContainer}>
+                <ProductCount
+                  handleChange={this.handleQuantityChange}
+                  increase={this.increaseProductQuantity}
+                  decrease={this.decreaseProductQuantity}
+                  quantity={orderData.quantity}
+                />
+              </Grid>
+
+              <Grid item className={styles.infoAboutShip}  direction='column' justify='center'>
+                <Grid item className={styles.shipInfoFree}>
+                  <LocalShippingIcon />
+                  <Typography               
+                  className={styles.freeShipText}
+                  variant='h6'
+                  component='span'
+                  gutterBottom
+                  >
+                    FREE SHIPPING FROM 200$         
+                  </Typography>
+                </Grid>
+
+                <Grid item className={styles.shipInfoTime}>
+                  <QueryBuilderIcon />
+                  <Typography               
+                  className={styles.timeShipText}
+                  variant='h6'
+                  component='span'
+                  gutterBottom
+                  >
+                    DELIVERY TIME: 4 WORKING DAYS          
+                  </Typography>
+                </Grid>
+              </Grid>
 
             <Grid item container>
               <Grid item xs={12} md={6} className={styles.buttonHomepage}>
                 <Button
                   variant='contained'
                   size='large'
-                  color='primary'
-                  className={styles.button}
                   component={NavLink}
                   exact to={`/`}
+                  className={styles.button}
                   startIcon={<ArrowBackIosIcon />}
                 >
                 BACK TO HOMEPAGE
@@ -192,7 +219,6 @@ class Component extends React.Component {
                 <Button
                   variant='contained'
                   size='large'
-                  color='primary'
                   onClick={this.addToCart}
                   className={styles.button}
                   startIcon={<AddIcon />}
@@ -205,14 +231,6 @@ class Component extends React.Component {
             </Grid>  
           </Grid>
 
-
-          <Grid item xs={12} container>
-            
-
-
-
-
-          </Grid>
         </Grid>
       </Paper>
     );

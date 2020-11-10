@@ -3,8 +3,42 @@
 .root {
   margin: 50px 120px;
 
+
   .productCounterContainer {
-    text-align: center;
+    text-align: left;
     margin: 50px;
+  }
+  .button {
+    background-color: $color-one;
+    color: $color-two;
+  }
+
+  .buttonCart button {
+    background-color: $color-three;
+    color: $color-two;
+  }
+
+  .infoAboutShip {
+    margin: 40px 20px;
+  }
+
+  .shipInfoFree {
+    font-weight: lighter;
+    color: rgb(112, 112, 112);
+
+    .shipInfoFree {
+      margin: 0 5px;
+    }
+
+  }
+
+  .shipInfoTime {
+    font-weight: lighter;
+    color: rgb(112, 112, 112);
+    margin: 10px 0;
+
+    .timeShipText {
+      margin: 0 5px;
+    }
   }
 }

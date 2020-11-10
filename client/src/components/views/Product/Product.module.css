@@ -4,7 +4,40 @@
 }
 
 .root .productCounterContainer {
-  text-align: center;
+  text-align: left;
   margin: 50px;
+}
+
+.root .button {
+  background-color: black;
+  color: white;
+}
+
+.root .buttonCart button {
+  background-color: #f50057;
+  color: white;
+}
+
+.root .infoAboutShip {
+  margin: 40px 20px;
+}
+
+.root .shipInfoFree {
+  font-weight: lighter;
+  color: #707070;
+}
+
+.root .shipInfoFree .shipInfoFree {
+  margin: 0 5px;
+}
+
+.root .shipInfoTime {
+  font-weight: lighter;
+  color: #707070;
+  margin: 10px 0;
+}
+
+.root .shipInfoTime .timeShipText {
+  margin: 0 5px;
 }
 /*# sourceMappingURL=Product.module.css.map */
