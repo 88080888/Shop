@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACEA,YAAY;ADAZ,AACE,KADG,CACH,UAAU,CAAC;EACT,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;CAChB",
+    "mappings": "ACEA,YAAY;ADAZ,AACE,KADG,CACH,UAAU,CAAC;EACT,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,IAAI;CAChB;;AAJH,AAME,KANG,CAMH,UAAU,CAAC;EACT,SAAS,EAAE,IAAI;CAChB",
     "sources": [
         "OrderSummaryList.module.scss",
         "../../../styles/settings.scss"

@@ -3,4 +3,8 @@
   font-weight: bold;
   font-size: 20px;
 }
+
+.root .tableBody {
+  font-size: 18px;
+}
 /*# sourceMappingURL=OrderSummaryList.module.css.map */

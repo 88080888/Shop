@@ -17,19 +17,19 @@ const Component = ({cartProducts}) => (
   <Table aria-label='simple table' className={styles.root}>
     <TableHead>
       <TableRow>
-        <TableCell  className={styles.tableHead}>Product</TableCell>
-        <TableCell  className={styles.tableHead}>Quantity</TableCell>
-        <TableCell  className={styles.tableHead}>Comment</TableCell>
-        <TableCell  className={styles.tableHead}>Price</TableCell>
+        <TableCell align='center'  className={styles.tableHead}>Product</TableCell>
+        <TableCell align='center' className={styles.tableHead}>Quantity</TableCell>
+        <TableCell align='center' className={styles.tableHead}>Comment</TableCell>
+        <TableCell align='center' className={styles.tableHead}>Price</TableCell>
       </TableRow>
     </TableHead>
     <TableBody>
       {cartProducts.map(cartProduct => (
         <TableRow key={cartProduct.id}>
-          <TableCell>{cartProduct.name}</TableCell>
-          <TableCell>{cartProduct.quantity}</TableCell>
-          <TableCell>{cartProduct.comment}</TableCell>
-          <TableCell>{cartProduct.totalPrice} S$</TableCell>
+          <TableCell align='center' className={styles.tableBody}>{cartProduct.name}</TableCell>
+          <TableCell align='center' className={styles.tableBody}>{cartProduct.quantity}</TableCell>
+          <TableCell align='center' className={styles.tableBody}>{cartProduct.comment}</TableCell>
+          <TableCell align='center' className={styles.tableBody}>{cartProduct.totalPrice} $</TableCell>
         </TableRow>
       ))}
     </TableBody>

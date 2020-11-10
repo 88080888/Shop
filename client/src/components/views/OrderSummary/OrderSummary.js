@@ -139,10 +139,10 @@ class Component extends React.Component {
           <Typography
             className={styles.title}
             gutterBottom
-            variant='h3'
+            variant='h4'
             component='h1'
           >
-            ORDER SUMMARY
+            Order summary
           </Typography>
         </Grid>
 
@@ -151,16 +151,17 @@ class Component extends React.Component {
         </Grid>
         
         <Grid item xs={12} className={styles.totalCostContainer}>
-          <Typography className={styles.title} gutterBottom variant="h4" component="span">
-            Total cost:{this.totalCost()}$
+          <Typography className={styles.totalCost} gutterBottom variant="h4" component="span">
+            Total cost: {this.totalCost()}$
           </Typography>
         </Grid>
 
         <Grid item xs={12} className={styles.contactFormHeaderContainer}>
           <Typography
             gutterBottom
-            variant='h5'
-            component='span'
+            variant='h4'
+            component='h1'
+            className={styles.title}
           >
               Contact form
           </Typography>
