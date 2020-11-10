@@ -1,6 +1,26 @@
 @import '../../../styles/settings.scss';
 
-.buttonOrderSummary button {
-  background-color: $color-three;
-  color: $color-two;
-}
+.root {
+  margin: 50px 150px;
+
+  .title {
+    margin: 0 410px;
+  }
+
+  .title {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    background-color: $color-three;
+    color: $color-two;
+    &:hover {
+      opacity: 80%;
+    }
+  }
+  .buttonsContainer {
+    margin-left: 400px;
+  }
+}  

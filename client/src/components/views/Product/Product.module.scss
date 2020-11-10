@@ -1,7 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  margin: 50px 120px;
+  margin: 50px 150px;
 
 
   .productCounterContainer {
@@ -16,6 +16,9 @@
   .buttonCart button {
     background-color: $color-three;
     color: $color-two;
+    &:hover {
+      opacity: 80%;
+    }
   }
 
   .infoAboutShip {
@@ -26,18 +29,18 @@
     font-weight: lighter;
     color: rgb(112, 112, 112);
 
-    .shipInfoFree {
-      margin: 0 5px;
+    .freeShipText {
+      margin: 0 10px;
     }
   }
 
   .shipInfoTime {
     font-weight: lighter;
     color: rgb(112, 112, 112);
-    margin: 10px 0;
+    margin: 15px 0;
 
     .timeShipText {
-      margin: 0 5px;
+      margin: 0 10px;
     }
   }
 }

@@ -1,6 +1,32 @@
 /* COLORS */
-.buttonOrderSummary button {
+.root {
+  margin: 50px 150px;
+}
+
+.root .title {
+  margin: 0 410px;
+}
+
+.root .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 40px;
+}
+
+.root .button {
   background-color: #f50057;
   color: white;
+}
+
+.root .button:hover {
+  opacity: 80%;
+}
+
+.root .buttonsContainer {
+  margin-left: 400px;
 }
 /*# sourceMappingURL=Cart.module.css.map */

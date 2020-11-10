@@ -66,9 +66,9 @@ class Component extends React.Component {
               <Button
                 variant='contained'
                 size='large'
-                className={styles.button}
                 component={NavLink}
                 exact to={`/order`}
+                className={styles.button}
                 endIcon={<ArrowForwardIosIcon />}
               >
               ORDER SUMMARY

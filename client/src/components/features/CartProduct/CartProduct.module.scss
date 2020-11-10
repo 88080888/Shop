@@ -1,38 +1,56 @@
 @import '../../../styles/settings.scss';
-
 .root {
-  // }	  flex-grow: 1;
-    margin: 10px;
-  }
-  
+  max-width: 2000px;
+
   .imageContainer {
-    width: 200px;
+    width: 100%;
     height: 200px;
   }
-  
+
   .image {
     margin: auto;
-    width: 100%;
-    height: 100%;
+    height: 60%;
     object-fit: contain;
   }
-  
-  .productName {
-    text-align: center;
+
+  .productNameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
+
+  .productName {
+    color: $color-one;
+  }
+
+  .formFieldLine {
+    display: flex;
+    justify-content: center;
+  }
+
+  .priceContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .price {
+    color: $color-one;
+  }
+
   .commentField {
     width: 100%;
   }
-  
-  .price {
-    text-align: right;
-  }
-  
+
   .iconContainer {
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
+
   .icon {
-    font-size: 40px;
+    color: $color-one;
+    font-size: 35px;
   }
+
+}

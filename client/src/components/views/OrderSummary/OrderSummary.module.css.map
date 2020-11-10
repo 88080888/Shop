@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACEA,YAAY",
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,MAAM,EAAE,UAAU;CAEnB",
     "sources": [
         "OrderSummary.module.scss",
         "../../../styles/settings.scss"

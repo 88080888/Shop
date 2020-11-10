@@ -1,6 +1,6 @@
 /* COLORS */
 .root {
-  margin: 50px 120px;
+  margin: 50px 150px;
 }
 
 .root .productCounterContainer {
@@ -18,6 +18,10 @@
   color: white;
 }
 
+.root .buttonCart button:hover {
+  opacity: 80%;
+}
+
 .root .infoAboutShip {
   margin: 40px 20px;
 }
@@ -27,17 +31,17 @@
   color: #707070;
 }
 
-.root .shipInfoFree .shipInfoFree {
-  margin: 0 5px;
+.root .shipInfoFree .freeShipText {
+  margin: 0 10px;
 }
 
 .root .shipInfoTime {
   font-weight: lighter;
   color: #707070;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .root .shipInfoTime .timeShipText {
-  margin: 0 5px;
+  margin: 0 10px;
 }
 /*# sourceMappingURL=Product.module.css.map */

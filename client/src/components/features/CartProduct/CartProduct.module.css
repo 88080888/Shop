@@ -1,38 +1,79 @@
 /* COLORS */
 .root {
-  margin: 10px;
+  max-width: 2000px;
 }
 
-.imageContainer {
-  width: 200px;
+.root .imageContainer {
+  width: 100%;
   height: 200px;
 }
 
-.image {
+.root .image {
   margin: auto;
-  width: 100%;
-  height: 100%;
+  height: 60%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.productName {
-  text-align: center;
+.root .productNameContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.commentField {
+.root .productName {
+  color: black;
+}
+
+.root .formFieldLine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.root .priceContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.root .price {
+  color: black;
+}
+
+.root .commentField {
   width: 100%;
 }
 
-.price {
-  text-align: right;
+.root .iconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.iconContainer {
-  text-align: right;
-}
-
-.icon {
-  font-size: 40px;
+.root .icon {
+  color: black;
+  font-size: 35px;
 }
 /*# sourceMappingURL=CartProduct.module.css.map */

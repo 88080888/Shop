@@ -155,64 +155,64 @@ class Component extends React.Component {
     const { cartProductData } = this.state;
 
     return(
-      <Grid container className={styles.root} spacing={2}>
+      <Grid container className={styles.root} spacing={2} align='center' alignItems="center">
 
-        <Grid item>
-          <ButtonBase className={styles.imageContainer} exact to={`/product/${productId}`}>
+        <Grid item xs={2} className={styles.imageBoxContainer}>
+          <ButtonBase 
+            className={styles.imageContainer} 
+            exact to={`/product/${productId}`}
+            component={NavLink}
+          >
             <img className={styles.image} src={photo} alt='product' />
           </ButtonBase>
         </Grid>
 
-        <Grid item xs={12} sm container>
+        <Grid item item xs={3} className={styles.productNameContainer}>
+          <Typography className={styles.productName} variant='h6'>
+            {name}
+          </Typography>
+        </Grid>
 
-          <Grid  item xs container direction='column' spacing={2}>
-            <Grid item xs>
-              <Typography className={styles.productName} gutterBottom variant='subtitle1'>
-                {name}
-              </Typography>
-            </Grid>
-            <Grid item xs>
-              <ProductCount handleChange={this.handleQuantityChange} quantity={cartProductData.quantity} increase={this.increaseCartProductQuantity} decrease={this.decreaseCartProductQuantity} />
-            </Grid>
-            <Grid item xs>
-              <TextField
-                id='comment'
-                label='Comment'
-                variant='outlined'
-                multiline
-                rowsMax={4}
-                inputProps={{
-                  maxLength: 100,
-                }}
-                className={styles.commentField}
-                value={cartProductData.comment}
-                onChange={this.handleCommentChange}
-              />
-            </Grid>
-          </Grid>
+        <Grid  item xs={2} className={styles.formFieldLine}>
+            <ProductCount
+              handleChange={this.handleQuantityChange}
+              quantity={cartProductData.quantity}
+              increase={this.increaseCartProductQuantity}
+              decrease={this.decreaseCartProductQuantity}
+            />
+        </Grid>
 
-          <Grid  item xs container direction='column' spacing={2}>
-            <Grid className={styles.price} item>
+        <Grid className={styles.price}  item xs={1} >
               ${cartProductData.totalPrice}
-            </Grid>
-            <Grid item className={styles.iconContainer}>
-              <Button onClick={this.removeFromCart}>
-                <DeleteIcon className={styles.icon} />
-              </Button>
-            </Grid>
-          </Grid>
+        </Grid>
 
+        <Grid  item xs={3} className={styles.formFieldLine}>
+            <TextField
+              id='comment'
+              label='Comment'
+              variant='outlined'
+              multiline
+              rows={1}
+              rowsMax={4}
+              inputProps={{
+                maxLength: 100,
+              }}
+              className={styles.commentField}
+              value={cartProductData.comment}
+              onChange={this.handleCommentChange}
+            />
+        </Grid>
+
+        <Grid  item xs={1} className={styles.iconContainer}>
+          <Button onClick={this.removeFromCart}>
+            <DeleteIcon className={styles.icon} />
+          </Button>
         </Grid>
 
       </Grid>
     );
   }
 }
-
-
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
 
 const mapDispatchToProps = dispatch => ({
   removeCartProduct: id => dispatch(removeCartProductRequest(id)),
@@ -222,7 +222,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(null, mapDispatchToProps)(Component);
 
 export {
-  //Component as CartProduct,
   Container as CartProduct,
   Component as CartProductComponent,
 };
