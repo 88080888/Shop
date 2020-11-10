@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACEA,YAAY",
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,mBAAmB,CAAC,MAAM,CAAC;EACzB,gBAAgB,ECEJ,OAAO;EDDnB,KAAK,ECAK,KAAK;CDChB",
     "sources": [
         "Cart.module.scss",
         "../../../styles/settings.scss"

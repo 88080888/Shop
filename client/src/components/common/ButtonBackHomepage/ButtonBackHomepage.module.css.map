@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,mBAAmB,CAAC;EAClB,gBAAgB,ECAN,KAAK;EDCf,KAAK,ECAK,KAAK;CDMhB;;AARD,AAIE,mBAJiB,AAIhB,MAAM,CAAC;EACN,KAAK,ECHG,KAAK;EDIb,OAAO,EAAE,GAAG;CACb",
+    "sources": [
+        "ButtonBackHomepage.module.scss",
+        "../../../styles/settings.scss"
+    ],
+    "names": [],
+    "file": "ButtonBackHomepage.module.css"
+}

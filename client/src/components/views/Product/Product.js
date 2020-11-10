@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import uniqid from 'uniqid';
 
-import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getProductById, getProductByIdRequest } from '../../../redux/productsRedux';
 import { addCartProductRequest } from '../../../redux/cartRedux';
 
+import { ButtonBackHomepage } from '../../common/ButtonBackHomepage/ButtonBackHomepage';
 import { ProductCount } from '../../features/ProductCount/ProductCount';
 import { PhotoGallery } from '../../features/PhotoGallery/PhotoGallery';
 import { formInputNumberParser } from '../../../utils';
@@ -17,7 +17,6 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import AddIcon from '@material-ui/icons/Add';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
@@ -203,16 +202,7 @@ class Component extends React.Component {
 
             <Grid item container>
               <Grid item xs={12} md={6} className={styles.buttonHomepage}>
-                <Button
-                  variant='contained'
-                  size='large'
-                  component={NavLink}
-                  exact to={`/`}
-                  className={styles.button}
-                  startIcon={<ArrowBackIosIcon />}
-                >
-                BACK TO HOMEPAGE
-                </Button>
+                <ButtonBackHomepage />
               </Grid>
 
               <Grid item xs={12} md={6} className={styles.buttonCart}>

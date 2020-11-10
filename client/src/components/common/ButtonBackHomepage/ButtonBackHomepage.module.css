@@ -1,0 +1,11 @@
+/* COLORS */
+.buttonBackHomepage {
+  background-color: black;
+  color: white;
+}
+
+.buttonBackHomepage:hover {
+  color: white;
+  opacity: 80%;
+}
+/*# sourceMappingURL=ButtonBackHomepage.module.css.map */

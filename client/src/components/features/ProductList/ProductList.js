@@ -5,9 +5,6 @@ import { ProductBox } from '../ProductBox/ProductBox';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
 import styles from './ProductList.module.scss';
 
 

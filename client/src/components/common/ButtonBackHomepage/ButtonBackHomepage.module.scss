@@ -1,0 +1,11 @@
+@import '../../../styles/settings.scss';
+
+.buttonBackHomepage {
+  background-color: $color-one;
+  color: $color-two;
+
+  &:hover {
+    color: $color-two;
+    opacity: 80%;
+  }
+}

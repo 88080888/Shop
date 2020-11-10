@@ -1,4 +1,6 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.buttonOrderSummary button {
+  background-color: $color-three;
+  color: $color-two;
+}
