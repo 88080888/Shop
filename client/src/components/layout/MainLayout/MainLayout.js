@@ -44,6 +44,5 @@ Component.propTypes = {
 
 export {
   Component as MainLayout,
-  // Container as MainLayout,
   Component as MainLayoutComponent,
 };

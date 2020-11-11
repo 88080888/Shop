@@ -3,7 +3,6 @@
 .root {
   margin: 50px 150px;
 
-
   .productCounterContainer {
     text-align: left;
     margin: 50px;
@@ -19,6 +18,10 @@
     &:hover {
       opacity: 80%;
     }
+  }
+
+  .buttonsContainer {
+    text-align: center;
   }
 
   .infoAboutShip {
@@ -42,5 +45,9 @@
     .timeShipText {
       margin: 0 10px;
     }
+  }
+
+  .text {
+    margin: 40px 40px;
   }
 }

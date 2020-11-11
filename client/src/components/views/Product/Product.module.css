@@ -22,6 +22,10 @@
   opacity: 80%;
 }
 
+.root .buttonsContainer {
+  text-align: center;
+}
+
 .root .infoAboutShip {
   margin: 40px 20px;
 }
@@ -43,5 +47,9 @@
 
 .root .shipInfoTime .timeShipText {
   margin: 0 10px;
+}
+
+.root .text {
+  margin: 40px 40px;
 }
 /*# sourceMappingURL=Product.module.css.map */

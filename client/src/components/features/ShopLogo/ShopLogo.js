@@ -8,7 +8,7 @@ import styles from './ShopLogo.module.scss';
 const Component = () => (
   <span className={styles.root}>
     <Button className={styles.link} component={Link} to={`/`}>
-      <img className={styles.logo} src={logo} alt="logo" />
+      <img className={styles.logo} src={logo} alt='logo' />
     </Button>
     <Button className={styles.logoText} component={Link} to={`/`}>
       <h1 className={styles.title}>Lola</h1>

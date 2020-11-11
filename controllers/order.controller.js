@@ -9,7 +9,7 @@ exports.addNewOrder = async (req, res) => {
 
       req.body.orderDetails.map(order => {
         delete order.photo;
-        if(order.quantity > 0 && order.quantity < 1000 && order.finalPrice > 0 && order.comment.length <= 100) orderCheck = true;
+        if(order.quantity > 0 && order.quantity < 1000 && order.totalPrice > 0 && order.comment.length <= 100) orderCheck = true;
         else {
           orderErrorCheck = true;
         }

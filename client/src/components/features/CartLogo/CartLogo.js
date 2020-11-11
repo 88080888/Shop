@@ -5,7 +5,6 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { getAllCartProducts, getCartProductsRequest } from '../../../redux/cartRedux';
 
 import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 import styles from './CartLogo.module.scss';
 
@@ -53,7 +52,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  //Component as CartLogo,
   Container as CartLogo,
   Component as CartLogoComponent,
 };

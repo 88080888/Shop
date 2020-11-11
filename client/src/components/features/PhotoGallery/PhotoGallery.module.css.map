@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,KAAK,EAAC,GAAG;CACV",
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,KAAK,EAAC,IAAI;CAQX;;AATD,AAII,KAJC,CAGH,EAAE,CACA,EAAE,CAAC;EACD,gBAAgB,ECFR,OAAO;CDGhB",
     "sources": [
         "PhotoGallery.module.scss",
         "../../../styles/settings.scss"

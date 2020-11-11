@@ -46,7 +46,7 @@ class Component extends React.Component {
       <Paper className={styles.root}>
         <Grid container className = {styles.gridContainer}>
           <Grid item xs={12}>
-            <Typography className={styles.title} gutterBottom variant="h3" component="h1">
+            <Typography className={styles.title} gutterBottom variant='h3' component='h1'>
               Cart
             </Typography>
           </Grid>
@@ -54,7 +54,7 @@ class Component extends React.Component {
             <CartProductList cartProducts={cartProducts} />
           </Grid>
           <Grid item xs={12} className={styles.totalCostContainer}>
-            <Typography className={styles.title} gutterBottom variant="h4" component="h1">
+            <Typography className={styles.title} gutterBottom variant='h4' component='h1'>
               Total cost:{this.totalCost()}$
             </Typography>
           </Grid>
@@ -92,7 +92,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  //Component as Cart,
   Container as Cart,
   Component as CartComponent,
 };

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
-
 import styles from './ButtonBackHomepage.module.scss';
 
 const Component = () => (

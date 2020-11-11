@@ -7,21 +7,20 @@ import Paper from '@material-ui/core/Paper';
 
 import styles from './ProductList.module.scss';
 
-
 const Component = ({ products }) => (
   <Grid 
     container
     className={styles.root}
     direction='row'
     justify='space-around'
-    alignItems='center'
+    alignItems='flex-start'
   >
     <Grid item xs={12}>
       <Paper elevation={0} className={styles.head}>OUR PRODUCTS</Paper>
     </Grid>
     {products.map(product => (
-      <Grid key={product._id} item >
-        <ProductBox {...product} />
+      <Grid key={product._id} item spacing={2}>
+        <ProductBox {...product}/>
       </Grid>
     ))}  
   </Grid>
@@ -31,18 +30,7 @@ Component.propTypes = {
   products: PropTypes.array,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
 export {
   Component as ProductList,
-  // Container as ProductList,
   Component as ProductListComponent,
 };

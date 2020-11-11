@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "ACEA,YAAY",
+    "mappings": "ACEA,YAAY;ADAZ,AAAA,KAAK,CAAC;EACJ,MAAM,EAAE,IAAI;CACb",
     "sources": [
         "Homepage.module.scss",
         "../../../styles/settings.scss"

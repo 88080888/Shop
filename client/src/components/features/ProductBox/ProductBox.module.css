@@ -1,6 +1,6 @@
 /* COLORS */
 .root {
-  margin-top: 20px;
+  margin: 10px 2px;
 }
 
 .root .photo {
@@ -33,7 +33,7 @@
 }
 
 .root .cardBody {
-  color: #ce3535;
+  color: #f50057;
 }
 
 .root .icon {

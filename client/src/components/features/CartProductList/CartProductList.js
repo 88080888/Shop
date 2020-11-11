@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 import { CartProduct } from '../CartProduct/CartProduct';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
 import styles from './CartProductList.module.scss';
 
 import Grid from '@material-ui/core/Grid';
@@ -33,18 +30,7 @@ Component.propTypes = {
   cartProducts: PropTypes.array,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
-
 export {
   Component as CartProductList,
-  // Container as CartProductList,
   Component as CartProductListComponent,
 };

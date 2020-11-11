@@ -132,14 +132,14 @@ class Component extends React.Component {
       <Paper className={styles.root}>
         <Grid container xs={12} spacing={2} className={styles.gridContainer}>
 
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={4}>
                 <PhotoGallery
                   images={product.photo}
                 />
           </Grid>
 
-          <Grid item xs={12} sm={6} container>
-            <Grid item item xs container direction="column" spacing={2}>
+          <Grid item xs={12} sm={8} container>
+            <Grid item item xs container direction="column" spacing={2} className={styles.text}>
               <Typography               
                 className={styles.title}
                 gutterBottom
@@ -200,7 +200,7 @@ class Component extends React.Component {
                 </Grid>
               </Grid>
 
-            <Grid item container>
+            <Grid item container className={styles.buttonsContainer}>
               <Grid item xs={12} md={6} className={styles.buttonHomepage}>
                 <ButtonBackHomepage />
               </Grid>

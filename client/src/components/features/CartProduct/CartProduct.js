@@ -16,7 +16,6 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-
 class Component extends React.Component {
 
   state = {
@@ -49,7 +48,6 @@ class Component extends React.Component {
     const { cartProductData } = this.state;
     const { value, id } = event.target;
     const { price, updateCartProduct } = this.props;
-
     const parsedValue = formInputNumberParser(value);
     const totalPrice = parsedValue * price;
 
@@ -155,7 +153,7 @@ class Component extends React.Component {
     const { cartProductData } = this.state;
 
     return(
-      <Grid container className={styles.root} spacing={2} align='center' alignItems="center">
+      <Grid container className={styles.root} spacing={2} align='center' alignItems='center'>
 
         <Grid item xs={2} className={styles.imageBoxContainer}>
           <ButtonBase 

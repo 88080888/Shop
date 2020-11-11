@@ -16,7 +16,7 @@ const Component = ({handleChange, increase, decrease, quantity}) => (
       variant="outlined"
       type="number"
       inputProps={{
-        min: 0,
+        min: 1,
         max: 999,
         step: 1,
       }}

@@ -35,4 +35,8 @@
   font-size: 25px;
   text-decoration: underline;
 }
+
+.root .buttonsContainer {
+  margin-left: 300px;
+}
 /*# sourceMappingURL=OrderSummary.module.css.map */
