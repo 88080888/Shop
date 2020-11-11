@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { ProductList } from '../../features/ProductList/ProductList';
 import { connect } from 'react-redux';
 import { getAllProducts, getAllProductsRequest  } from '../../../redux/productsRedux';
-import { PhotoGallery } from '../../features/PhotoGallery/PhotoGallery';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';

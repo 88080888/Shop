@@ -158,14 +158,14 @@ class Component extends React.Component {
         <Grid item xs={2} className={styles.imageBoxContainer}>
           <ButtonBase 
             className={styles.imageContainer} 
-            exact to={`/product/${productId}`}
             component={NavLink}
+            exact to={`/product/${productId}`}
           >
             <img className={styles.image} src={photo} alt='product' />
           </ButtonBase>
         </Grid>
 
-        <Grid item item xs={3} className={styles.productNameContainer}>
+        <Grid item xs={3} className={styles.productNameContainer}>
           <Typography className={styles.productName} variant='h6'>
             {name}
           </Typography>

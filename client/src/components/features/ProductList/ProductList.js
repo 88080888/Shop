@@ -19,7 +19,7 @@ const Component = ({ products }) => (
       <Paper elevation={0} className={styles.head}>OUR PRODUCTS</Paper>
     </Grid>
     {products.map(product => (
-      <Grid key={product._id} item spacing={2}>
+      <Grid key={product.id} item>
         <ProductBox {...product}/>
       </Grid>
     ))}  

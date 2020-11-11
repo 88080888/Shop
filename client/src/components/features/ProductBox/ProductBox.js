@@ -71,7 +71,7 @@ Component.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
   price: PropTypes.number,
-  photo: PropTypes.node,
+  photo: PropTypes.array,
 };
 
 export {

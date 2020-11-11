@@ -4,7 +4,7 @@ Click [here](https://shoplingerie.herokuapp.com/) to see my Lingerie Shop site.
 
 Before starting the project install [MongoDB Enterprise Server](https://www.mongodb.com/try/download/community) on your computer.
 
-## Yarn install
+### 'yarn install'
 After cloning project repository run `yarn install` to install dependencies.
 
 ### `yarn start` 

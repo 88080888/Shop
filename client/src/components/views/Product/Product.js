@@ -139,7 +139,7 @@ class Component extends React.Component {
           </Grid>
 
           <Grid item xs={12} sm={8} container>
-            <Grid item item xs container direction="column" spacing={2} className={styles.text}>
+            <Grid item xs container direction="column" spacing={2} className={styles.text}>
               <Typography               
                 className={styles.title}
                 gutterBottom
